@@ -7,6 +7,13 @@
 //
 
 #import "DTReadModel.h"
+@implementation Root
+@end
+
+@implementation RootData
+@end
+
+
 
 @implementation DTReadModel
 +(JSONKeyMapper *)keyMapper

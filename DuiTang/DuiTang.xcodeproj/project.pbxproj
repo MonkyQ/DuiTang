@@ -90,6 +90,10 @@
 		FCD96A341C8D6A2A004C3BC6 /* DTStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD96A311C8D6A2A004C3BC6 /* DTStoreViewController.m */; };
 		FCD96A371C8D6A4B004C3BC6 /* DTReadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD96A361C8D6A4B004C3BC6 /* DTReadModel.m */; };
 		FCD96A3B1C8D7103004C3BC6 /* DTNetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD96A3A1C8D7103004C3BC6 /* DTNetHelper.m */; };
+		FCD96A3F1C8D7A0C004C3BC6 /* DTReadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD96A3D1C8D7A0C004C3BC6 /* DTReadCell.m */; };
+		FCD96A401C8D7A0C004C3BC6 /* DTReadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD96A3E1C8D7A0C004C3BC6 /* DTReadCell.xib */; };
+		FCD96A431C8DA979004C3BC6 /* DTWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD96A421C8DA979004C3BC6 /* DTWebController.m */; };
+		FCD96A461C8DAFE0004C3BC6 /* DTWebModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD96A451C8DAFE0004C3BC6 /* DTWebModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -278,6 +282,13 @@
 		FCD96A361C8D6A4B004C3BC6 /* DTReadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTReadModel.m; sourceTree = "<group>"; };
 		FCD96A391C8D7103004C3BC6 /* DTNetHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNetHelper.h; sourceTree = "<group>"; };
 		FCD96A3A1C8D7103004C3BC6 /* DTNetHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTNetHelper.m; sourceTree = "<group>"; };
+		FCD96A3C1C8D7A0C004C3BC6 /* DTReadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTReadCell.h; sourceTree = "<group>"; };
+		FCD96A3D1C8D7A0C004C3BC6 /* DTReadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTReadCell.m; sourceTree = "<group>"; };
+		FCD96A3E1C8D7A0C004C3BC6 /* DTReadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTReadCell.xib; sourceTree = "<group>"; };
+		FCD96A411C8DA979004C3BC6 /* DTWebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTWebController.h; sourceTree = "<group>"; };
+		FCD96A421C8DA979004C3BC6 /* DTWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTWebController.m; sourceTree = "<group>"; };
+		FCD96A441C8DAFE0004C3BC6 /* DTWebModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTWebModel.h; sourceTree = "<group>"; };
+		FCD96A451C8DAFE0004C3BC6 /* DTWebModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTWebModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -755,6 +766,8 @@
 			children = (
 				FCD96A301C8D6A2A004C3BC6 /* DTStoreViewController.h */,
 				FCD96A311C8D6A2A004C3BC6 /* DTStoreViewController.m */,
+				FCD96A411C8DA979004C3BC6 /* DTWebController.h */,
+				FCD96A421C8DA979004C3BC6 /* DTWebController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -764,6 +777,8 @@
 			children = (
 				FCD96A351C8D6A4B004C3BC6 /* DTReadModel.h */,
 				FCD96A361C8D6A4B004C3BC6 /* DTReadModel.m */,
+				FCD96A441C8DAFE0004C3BC6 /* DTWebModel.h */,
+				FCD96A451C8DAFE0004C3BC6 /* DTWebModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -771,6 +786,9 @@
 		FCD96A331C8D6A2A004C3BC6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FCD96A3C1C8D7A0C004C3BC6 /* DTReadCell.h */,
+				FCD96A3D1C8D7A0C004C3BC6 /* DTReadCell.m */,
+				FCD96A3E1C8D7A0C004C3BC6 /* DTReadCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -894,6 +912,7 @@
 				D1E0E6F11C8D2E5700D7DBD7 /* LaunchScreen.storyboard in Resources */,
 				D1E0E6EE1C8D2E5700D7DBD7 /* Assets.xcassets in Resources */,
 				D1E0E6EC1C8D2E5700D7DBD7 /* Main.storyboard in Resources */,
+				FCD96A401C8D7A0C004C3BC6 /* DTReadCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -997,11 +1016,13 @@
 				D1E0E7C61C8D407D00D7DBD7 /* NSDate+Helper.m in Sources */,
 				D1E0E8001C8D407D00D7DBD7 /* UIView+Shake.m in Sources */,
 				FCD96A371C8D6A4B004C3BC6 /* DTReadModel.m in Sources */,
+				FCD96A3F1C8D7A0C004C3BC6 /* DTReadCell.m in Sources */,
 				D1E0E7E61C8D407D00D7DBD7 /* UIImage+Color.m in Sources */,
 				D1E0E7F31C8D407D00D7DBD7 /* UINavigationController+JZExtension.m in Sources */,
 				D1E0E7D61C8D407D00D7DBD7 /* NSString+Size.m in Sources */,
 				D1E0E7D81C8D407D00D7DBD7 /* NSString+UrlEncode.m in Sources */,
 				D1E0E7E41C8D407D00D7DBD7 /* UIImage+CalculatedSize.m in Sources */,
+				FCD96A431C8DA979004C3BC6 /* DTWebController.m in Sources */,
 				D1E0E7F41C8D407D00D7DBD7 /* UINavigationItem+Loading.m in Sources */,
 				D1E0E7F71C8D407D00D7DBD7 /* UIScrollView+TwitterCover.m in Sources */,
 				D1E0E7D31C8D407D00D7DBD7 /* NSString+JsonValue.m in Sources */,
@@ -1010,6 +1031,7 @@
 				D1E0E7E01C8D407D00D7DBD7 /* UIButton+TouchAreaInsets.m in Sources */,
 				D1E0E8021C8D407D00D7DBD7 /* UIView+Visuals.m in Sources */,
 				D1E0E7DD1C8D407D00D7DBD7 /* UIApplication+Permissions.m in Sources */,
+				FCD96A461C8DAFE0004C3BC6 /* DTWebModel.m in Sources */,
 				D1E0E7CC1C8D407D00D7DBD7 /* NSDictionary+URL.m in Sources */,
 				D1E0E7F61C8D407D00D7DBD7 /* UINavigationItem+Margin.m in Sources */,
 				D1E0E7EE1C8D407D00D7DBD7 /* UIImageView+FaceAwareFill.m in Sources */,

@@ -14,16 +14,16 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-#define BASEURL @"wwww.baidu.com"
+#import <UIImageView+WebCache.h>
+#import "DTNetHelper.h"
+
 
 #define MAS_SHORTHAND
 //define this constant if you want to enable auto-boxing for default syntax
 #define MAS_SHORTHAND_GLOBALS
 #import "Masonry.h"
 
-#define MAS_SHORTHAND
-#define MAS_SHORTHAND_GLOBALS
-
+#define BASEURL @""
 #define SCRW [UIScreen mainScreen].bounds.size.width
 #define SCRH [UIScreen mainScreen].bounds.size.height
 #define BTNH 48
