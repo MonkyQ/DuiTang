@@ -1,5 +1,5 @@
 //
-//  DTDiscoverViewController.h
+//  DTTitleCell.h
 //  DuiTang
 //
 //  Created by Monky on 16/3/7.
@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DTTitleModel.h"
 
-@interface DTDiscoverViewController : UITableViewController
-
+@interface DTTitleCell : UITableViewCell
+- (void)configureModel:(Group *)model;
 @end

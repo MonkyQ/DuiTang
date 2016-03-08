@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-#define BASEURL @"wwww.baidu.com"
+#define BASEURL nil
 
 #define MAS_SHORTHAND
 //define this constant if you want to enable auto-boxing for default syntax

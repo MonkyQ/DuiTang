@@ -87,6 +87,9 @@
 		D1E0E8061C8D407D00D7DBD7 /* NSMutableString+TagReplace.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E0E7C21C8D407D00D7DBD7 /* NSMutableString+TagReplace.m */; };
 		D1E0E8071C8D407D00D7DBD7 /* NSString+WPAttributedMarkup.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E0E7C41C8D407D00D7DBD7 /* NSString+WPAttributedMarkup.m */; };
 		D1E0E80A1C8D409000D7DBD7 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E0E8091C8D409000D7DBD7 /* UIView+Extension.m */; };
+		D1F8D86B1C8D85410077C207 /* DTTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F8D8691C8D85410077C207 /* DTTitleCell.m */; };
+		D1F8D86C1C8D85410077C207 /* DTTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1F8D86A1C8D85410077C207 /* DTTitleCell.xib */; };
+		D1F8D86F1C8D97170077C207 /* DTTitleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F8D86E1C8D97170077C207 /* DTTitleModel.m */; };
 		FCD96A341C8D6A2A004C3BC6 /* DTStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD96A311C8D6A2A004C3BC6 /* DTStoreViewController.m */; };
 		FCD96A371C8D6A4B004C3BC6 /* DTReadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD96A361C8D6A4B004C3BC6 /* DTReadModel.m */; };
 		FCD96A3B1C8D7103004C3BC6 /* DTNetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD96A3A1C8D7103004C3BC6 /* DTNetHelper.m */; };
@@ -272,6 +275,11 @@
 		D1E0E7C41C8D407D00D7DBD7 /* NSString+WPAttributedMarkup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WPAttributedMarkup.m"; sourceTree = "<group>"; };
 		D1E0E8081C8D409000D7DBD7 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		D1E0E8091C8D409000D7DBD7 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		D1F8D8681C8D85410077C207 /* DTTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTTitleCell.h; sourceTree = "<group>"; };
+		D1F8D8691C8D85410077C207 /* DTTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTTitleCell.m; sourceTree = "<group>"; };
+		D1F8D86A1C8D85410077C207 /* DTTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTTitleCell.xib; sourceTree = "<group>"; };
+		D1F8D86D1C8D97170077C207 /* DTTitleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTTitleModel.h; sourceTree = "<group>"; };
+		D1F8D86E1C8D97170077C207 /* DTTitleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTTitleModel.m; sourceTree = "<group>"; };
 		FCD96A301C8D6A2A004C3BC6 /* DTStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTStoreViewController.h; sourceTree = "<group>"; };
 		FCD96A311C8D6A2A004C3BC6 /* DTStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTStoreViewController.m; sourceTree = "<group>"; };
 		FCD96A351C8D6A4B004C3BC6 /* DTReadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTReadModel.h; sourceTree = "<group>"; };
@@ -417,6 +425,11 @@
 			children = (
 				D1E0E7221C8D321D00D7DBD7 /* DTDiscoverViewController.h */,
 				D1E0E7231C8D321D00D7DBD7 /* DTDiscoverViewController.m */,
+				D1F8D8681C8D85410077C207 /* DTTitleCell.h */,
+				D1F8D8691C8D85410077C207 /* DTTitleCell.m */,
+				D1F8D86A1C8D85410077C207 /* DTTitleCell.xib */,
+				D1F8D86D1C8D97170077C207 /* DTTitleModel.h */,
+				D1F8D86E1C8D97170077C207 /* DTTitleModel.m */,
 			);
 			path = "Discover(发现)";
 			sourceTree = "<group>";
@@ -893,6 +906,7 @@
 			files = (
 				D1E0E6F11C8D2E5700D7DBD7 /* LaunchScreen.storyboard in Resources */,
 				D1E0E6EE1C8D2E5700D7DBD7 /* Assets.xcassets in Resources */,
+				D1F8D86C1C8D85410077C207 /* DTTitleCell.xib in Resources */,
 				D1E0E6EC1C8D2E5700D7DBD7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1028,6 +1042,7 @@
 				D1E0E7FF1C8D407D00D7DBD7 /* UIView+Shadow.m in Sources */,
 				D1E0E7DA1C8D407D00D7DBD7 /* NSTimer+Blocks.m in Sources */,
 				D1E0E7CE1C8D407D00D7DBD7 /* NSObject+AutoCoding.m in Sources */,
+				D1F8D86B1C8D85410077C207 /* DTTitleCell.m in Sources */,
 				D1E0E7DC1C8D407D00D7DBD7 /* UIApplication+ApplicationSize.m in Sources */,
 				D1E0E7CF1C8D407D00D7DBD7 /* NSObject+GCD.m in Sources */,
 				D1E0E7FA1C8D407D00D7DBD7 /* UIView+Border.m in Sources */,
@@ -1041,6 +1056,7 @@
 				D1E0E7D41C8D407D00D7DBD7 /* NSString+MD5.m in Sources */,
 				FCD96A341C8D6A2A004C3BC6 /* DTStoreViewController.m in Sources */,
 				D1E0E7D51C8D407D00D7DBD7 /* NSString+RegexCategory.m in Sources */,
+				D1F8D86F1C8D97170077C207 /* DTTitleModel.m in Sources */,
 				D1E0E7F21C8D407D00D7DBD7 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				D1E0E7ED1C8D407D00D7DBD7 /* UIImageView+BetterFace.m in Sources */,
 			);
