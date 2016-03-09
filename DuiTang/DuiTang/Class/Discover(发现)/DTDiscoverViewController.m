@@ -10,6 +10,7 @@
 #import "DTNetHelper.h"
 #import "DTTitleModel.h"
 #import "DTTitleCell.h"
+#import "DTDetailViewController.h"
 
 static NSString * const DTTitleCellId = @"Title";
 @interface DTDiscoverViewController ()
@@ -18,6 +19,15 @@ static NSString * const DTTitleCellId = @"Title";
 @end
 
 @implementation DTDiscoverViewController
+
+- (NSMutableArray *)dataArray
+{
+    if (_dataArray ==nil) {
+        _dataArray = [NSMutableArray array];
+    }
+    return _dataArray;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,8 +58,9 @@ static NSString * const DTTitleCellId = @"Title";
             weakSelf.model = [[DTTitleModel alloc] initWithData:result error:&error];
             self.dataArray =weakSelf.model.data;
             [self.dataArray removeObjectAtIndex:0];
+            [self.dataArray removeObjectAtIndex:0];
             
-            NSLog(@"dataArraydataArraydataArraydataArray%lu", self.dataArray.count);
+       //     NSLog(@"dataArraydataArraydataArraydataArray%lu", self.dataArray.count);
             NSLog(@"%@",error);
             //刷新表格
             [weakSelf.tableView reloadData];
@@ -66,7 +77,7 @@ static NSString * const DTTitleCellId = @"Title";
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 
-    NSLog(@"%lu",(unsigned long)self.model.data.count);
+  //  NSLog(@"%lu",(unsigned long)self.model.data.count);
     return self.dataArray.count;
 }
 
@@ -79,12 +90,8 @@ static NSString * const DTTitleCellId = @"Title";
     {
         Data *data =[self.dataArray objectAtIndex:1];
         return data.group_items.count;
-    }else if (section ==2)
-    {
-        Data *data =[self.dataArray objectAtIndex:2];
-        return data.group_items.count;
     }else{
-        Data *data =[self.dataArray objectAtIndex:3];
+        Data *data =[self.dataArray objectAtIndex:2];
         return data.group_items.count;
     }
 }
@@ -97,12 +104,8 @@ static NSString * const DTTitleCellId = @"Title";
     {
         Data *data =[self.dataArray objectAtIndex:1];
         return data.group_name;
-    }else if (section ==2)
-    {
-        Data *data =[self.dataArray objectAtIndex:2];
-        return data.group_name;
     }else{
-        Data *data =[self.dataArray objectAtIndex:3];
+        Data *data =[self.dataArray objectAtIndex:2];
         return data.group_name;
     }
 }
@@ -132,8 +135,22 @@ static NSString * const DTTitleCellId = @"Title";
     Data *data =self.model.data[indexPath.section];
     Group *model =data.group_items[indexPath.row];
     [cell configureModel:model];
-     NSLog(@"%@++++++++++++++",model);
+  //   NSLog(@"%@++++++++++++++",model);
     return cell;
 }
 
+#pragma mark-------
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    DTDetailViewController *dtVC = [[DTDetailViewController alloc]init];
+    dtVC.hidesBottomBarWhenPushed = YES;
+    dtVC.view.backgroundColor = [UIColor colorWithRed:1.000 green:0.400 blue:0.400 alpha:1.000];
+    Data *data =self.model.data[indexPath.section];
+    Group *model =data.group_items[indexPath.row];
+   // NSString *target = model.target;
+    dtVC.navigationItem.title =model.name;
+    dtVC.cat_key = model.target;
+    [self.navigationController pushViewController:dtVC animated:YES];
+}
 @end
