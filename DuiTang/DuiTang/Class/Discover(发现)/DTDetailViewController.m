@@ -12,6 +12,7 @@
 #import "DTNetHelper.h"
 #import "DTDetailModel.h"
 #import "MJRefresh.h"
+#import "UIControl+ActionBlocks.h"
 
 #import "DTContentViewController.h"
 
@@ -42,6 +43,15 @@ static NSString *cellID = @"DTDetailCollectionViewCell";
     [self setupLayout];
     //[self downloadData];
     [self setupRefresh];
+    UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    leftBtn.frame = CGRectMake(0, 0, 30, 30);
+    [leftBtn setImage:[UIImage imageNamed:@"icon_back_dark"] forState:UIControlStateNormal];
+    self.navigationItem.leftBarButtonItem =[[UIBarButtonItem alloc]initWithCustomView:leftBtn];
+    [leftBtn handleControlEvents:UIControlEventTouchUpInside withBlock:^(id weakSender) {
+         [self.navigationController popViewControllerAnimated:YES];
+    }];
+    
+    
 }
 
 - (void)setupRefresh
