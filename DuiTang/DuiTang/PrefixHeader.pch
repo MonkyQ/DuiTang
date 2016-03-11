@@ -16,7 +16,10 @@
 
 #import <UIImageView+WebCache.h>
 #import "DTNetHelper.h"
+#import "EaseUI-Prefix.pch"
 
+#import "NSObject+AOP.h"
+#import "UINavigationController+AOP.h"
 
 #define MAS_SHORTHAND
 //define this constant if you want to enable auto-boxing for default syntax

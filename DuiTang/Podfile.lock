@@ -23,6 +23,7 @@ PODS:
   - FrameAccessor (2.0)
   - JSONModel (1.2.0)
   - Masonry (0.6.4)
+  - MJRefresh (3.1.0)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - FrameAccessor
   - JSONModel
   - Masonry
+  - MJRefresh
   - ReactiveCocoa
   - SDWebImage
 
@@ -47,6 +49,7 @@ SPEC CHECKSUMS:
   FrameAccessor: 443a13e58e23a10ff22180da0897b28c3f6abf66
   JSONModel: 12523685c4b623553ccf844bbbf7007624317b2c
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
 
