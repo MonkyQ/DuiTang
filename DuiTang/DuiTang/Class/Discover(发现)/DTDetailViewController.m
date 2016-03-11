@@ -13,6 +13,8 @@
 #import "DTDetailModel.h"
 #import "MJRefresh.h"
 
+#import "DTContentViewController.h"
+
 @interface DTDetailViewController ()<MKWaterflowLayoutDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 {
     NSInteger _currentPage;
@@ -61,7 +63,7 @@ static NSString *cellID = @"DTDetailCollectionViewCell";
     NSString *p2 = [NSString stringWithFormat:@"cate_key=%@",par];
     NSString *p3 = @"&screen_width=320&__dtac=%257B%2522_r%2522%253A%2520%2522870068%2522%257D";
     NSString *path = [NSString stringWithFormat:@"%@%@%@",p1,p2,p3];
-    NSLog(@"path%@",path);
+   // NSLog(@"path%@",path);
     [DTNetHelper getDataWithParam:nil andPath:path andComplete:^(BOOL success, id result) {
         if (success) {
             NSError *error;
@@ -69,8 +71,8 @@ static NSString *cellID = @"DTDetailCollectionViewCell";
             //JSONModel解析
             weakSelf.model = [[DTDetailModel alloc] initWithData:result error:&error];
             self.detailArr = [NSMutableArray arrayWithArray: weakSelf.model.data.object_list];
-            NSLog(@"dataArraydataArraydataArraydataArray%lu", self.detailArr.count);
-            NSLog(@"%@",error);
+          //  NSLog(@"dataArraydataArraydataArraydataArray%lu", self.detailArr.count);
+          //  NSLog(@"%@",error);
             // 刷新数据
             [self.collectionView reloadData];
             
@@ -98,11 +100,9 @@ static NSString *cellID = @"DTDetailCollectionViewCell";
     [DTNetHelper getDataWithParam:nil andPath:path andComplete:^(BOOL success, id result) {
         if (success) {
             NSError *error;
-            //[self.detailArr removeAllObjects];
             //JSONModel解析
             weakSelf.model = [[DTDetailModel alloc] initWithData:result error:&error];
             [self.detailArr addObjectsFromArray:weakSelf.model.data.object_list];
-        //    NSLog(@"dataArraydataArraydataArraydataArray%lu", self.detailArr.count);
             NSLog(@"%@",error);
             // 刷新数据
             [self.collectionView reloadData];
@@ -125,6 +125,7 @@ static NSString *cellID = @"DTDetailCollectionViewCell";
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
     collectionView.backgroundColor = [UIColor whiteColor];
     collectionView.dataSource = self;
+    collectionView.delegate = self;
     [self.view addSubview:collectionView];
     collectionView.backgroundColor = [UIColor colorWithWhite:0.858 alpha:1.000];
     // 注册
@@ -185,9 +186,9 @@ static NSString *cellID = @"DTDetailCollectionViewCell";
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"0.0");
-    UIViewController *vc = [[UIViewController alloc]init];
-    vc.view.backgroundColor =[UIColor yellowColor];
-    [self.navigationController pushViewController:vc  animated:YES];
+    DTContentViewController *contentVC = [[DTContentViewController alloc]init];
+    contentVC.navigationItem.title = @"详情";
+    [self.navigationController pushViewController:contentVC  animated:YES];
 }
 
 @end

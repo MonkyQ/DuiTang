@@ -9,7 +9,6 @@
 #import <JSONModel/JSONModel.h>
 
 @class Detai;
-@protocol Detai;
 @interface DTDetailModel : JSONModel
 @property (nonatomic,strong)Detai *data;
 @property (nonatomic,strong)NSNumber *status;

@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		0D025577253B430E294DFF10 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF32CCCC0664B258BCD44482 /* libPods.a */; };
+		D1BE3F381C90066D00F574DE /* DTContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BE3F371C90066D00F574DE /* DTContentViewController.m */; };
+		D1BE3F3B1C900B9C00F574DE /* DTContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BE3F3A1C900B9C00F574DE /* DTContentModel.m */; };
+		D1BE3F3F1C901EA600F574DE /* DTContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BE3F3D1C901EA600F574DE /* DTContentTableViewCell.m */; };
+		D1BE3F401C901EA600F574DE /* DTContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1BE3F3E1C901EA600F574DE /* DTContentTableViewCell.xib */; };
 		D1C5DBC51C8EAE4E0096B258 /* DTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C5DBC41C8EAE4E0096B258 /* DTDetailViewController.m */; };
 		D1C5DBC81C8EB1000096B258 /* MKWaterflowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C5DBC71C8EB1000096B258 /* MKWaterflowLayout.m */; };
 		D1C5DBD11C8EBAAE0096B258 /* DTDetailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C5DBCF1C8EBAAE0096B258 /* DTDetailCollectionViewCell.m */; };
 		D1C5DBD21C8EBAAE0096B258 /* DTDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1C5DBD01C8EBAAE0096B258 /* DTDetailCollectionViewCell.xib */; };
 		D1C5DBD81C8EC1D50096B258 /* DTDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C5DBD71C8EC1D50096B258 /* DTDetailModel.m */; };
+		D1D926461C9192D3003F1B80 /* DTContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D926451C9192D3003F1B80 /* DTContentView.m */; };
 		D1E0E6E31C8D2E5700D7DBD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E0E6E21C8D2E5700D7DBD7 /* main.m */; };
 		D1E0E6E61C8D2E5700D7DBD7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E0E6E51C8D2E5700D7DBD7 /* AppDelegate.m */; };
 		D1E0E6EC1C8D2E5700D7DBD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1E0E6EA1C8D2E5700D7DBD7 /* Main.storyboard */; };
@@ -121,6 +126,13 @@
 		9863A6FB9F240366DAC54E1D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		99FEBC651EA91D2BF1D619BA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AF32CCCC0664B258BCD44482 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1BE3F361C90066D00F574DE /* DTContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTContentViewController.h; sourceTree = "<group>"; };
+		D1BE3F371C90066D00F574DE /* DTContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTContentViewController.m; sourceTree = "<group>"; };
+		D1BE3F391C900B9C00F574DE /* DTContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTContentModel.h; sourceTree = "<group>"; };
+		D1BE3F3A1C900B9C00F574DE /* DTContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTContentModel.m; sourceTree = "<group>"; };
+		D1BE3F3C1C901EA600F574DE /* DTContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTContentTableViewCell.h; sourceTree = "<group>"; };
+		D1BE3F3D1C901EA600F574DE /* DTContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTContentTableViewCell.m; sourceTree = "<group>"; };
+		D1BE3F3E1C901EA600F574DE /* DTContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTContentTableViewCell.xib; sourceTree = "<group>"; };
 		D1C5DBC31C8EAE4E0096B258 /* DTDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTDetailViewController.h; sourceTree = "<group>"; };
 		D1C5DBC41C8EAE4E0096B258 /* DTDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTDetailViewController.m; sourceTree = "<group>"; };
 		D1C5DBC61C8EB1000096B258 /* MKWaterflowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKWaterflowLayout.h; sourceTree = "<group>"; };
@@ -130,6 +142,8 @@
 		D1C5DBD01C8EBAAE0096B258 /* DTDetailCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTDetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		D1C5DBD61C8EC1D50096B258 /* DTDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTDetailModel.h; sourceTree = "<group>"; };
 		D1C5DBD71C8EC1D50096B258 /* DTDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTDetailModel.m; sourceTree = "<group>"; };
+		D1D926441C9192D3003F1B80 /* DTContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTContentView.h; sourceTree = "<group>"; };
+		D1D926451C9192D3003F1B80 /* DTContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTContentView.m; sourceTree = "<group>"; };
 		D1E0E6DE1C8D2E5700D7DBD7 /* DuiTang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuiTang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1E0E6E21C8D2E5700D7DBD7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D1E0E6E41C8D2E5700D7DBD7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -352,6 +366,8 @@
 				D1E0E7231C8D321D00D7DBD7 /* DTDiscoverViewController.m */,
 				D1C5DBC31C8EAE4E0096B258 /* DTDetailViewController.h */,
 				D1C5DBC41C8EAE4E0096B258 /* DTDetailViewController.m */,
+				D1BE3F361C90066D00F574DE /* DTContentViewController.h */,
+				D1BE3F371C90066D00F574DE /* DTContentViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -363,6 +379,8 @@
 				D1F8D86E1C8D97170077C207 /* DTTitleModel.m */,
 				D1C5DBD61C8EC1D50096B258 /* DTDetailModel.h */,
 				D1C5DBD71C8EC1D50096B258 /* DTDetailModel.m */,
+				D1BE3F391C900B9C00F574DE /* DTContentModel.h */,
+				D1BE3F3A1C900B9C00F574DE /* DTContentModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -378,6 +396,11 @@
 				D1F8D8681C8D85410077C207 /* DTTitleCell.h */,
 				D1F8D8691C8D85410077C207 /* DTTitleCell.m */,
 				D1F8D86A1C8D85410077C207 /* DTTitleCell.xib */,
+				D1BE3F3C1C901EA600F574DE /* DTContentTableViewCell.h */,
+				D1BE3F3D1C901EA600F574DE /* DTContentTableViewCell.m */,
+				D1BE3F3E1C901EA600F574DE /* DTContentTableViewCell.xib */,
+				D1D926441C9192D3003F1B80 /* DTContentView.h */,
+				D1D926451C9192D3003F1B80 /* DTContentView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -955,6 +978,7 @@
 				D1E0E6F11C8D2E5700D7DBD7 /* LaunchScreen.storyboard in Resources */,
 				D1C5DBD21C8EBAAE0096B258 /* DTDetailCollectionViewCell.xib in Resources */,
 				D1E0E6EE1C8D2E5700D7DBD7 /* Assets.xcassets in Resources */,
+				D1BE3F401C901EA600F574DE /* DTContentTableViewCell.xib in Resources */,
 				D1F8D86C1C8D85410077C207 /* DTTitleCell.xib in Resources */,
 				D1E0E6EC1C8D2E5700D7DBD7 /* Main.storyboard in Resources */,
 			);
@@ -1037,7 +1061,9 @@
 				D1E0E7EF1C8D407D00D7DBD7 /* UIImageView+Letters.m in Sources */,
 				D1E0E7EA1C8D407D00D7DBD7 /* UIImage+RoundedCorner.m in Sources */,
 				D1E0E7DE1C8D407D00D7DBD7 /* UIButton+BackgroundColor.m in Sources */,
+				D1D926461C9192D3003F1B80 /* DTContentView.m in Sources */,
 				FCD96A3B1C8D7103004C3BC6 /* DTNetHelper.m in Sources */,
+				D1BE3F3F1C901EA600F574DE /* DTContentTableViewCell.m in Sources */,
 				D1E0E7FB1C8D407D00D7DBD7 /* UIView+Borders.m in Sources */,
 				D1E0E7D71C8D407D00D7DBD7 /* NSString+Trims.m in Sources */,
 				D1E0E7FE1C8D407D00D7DBD7 /* UIView+Screenshot.m in Sources */,
@@ -1047,6 +1073,7 @@
 				D1E0E7D21C8D407D00D7DBD7 /* NSObject+Runtime.m in Sources */,
 				D1E0E7EC1C8D407D00D7DBD7 /* UIImageView+Addition.m in Sources */,
 				D1C5DBD81C8EC1D50096B258 /* DTDetailModel.m in Sources */,
+				D1BE3F381C90066D00F574DE /* DTContentViewController.m in Sources */,
 				D1E0E7F51C8D407D00D7DBD7 /* UINavigationItem+Lock.m in Sources */,
 				D1E0E7271C8D322700D7DBD7 /* DTMineViewController.m in Sources */,
 				D1E0E71E1C8D317300D7DBD7 /* DTViewController.m in Sources */,
@@ -1078,6 +1105,7 @@
 				D1E0E7DD1C8D407D00D7DBD7 /* UIApplication+Permissions.m in Sources */,
 				D1E0E7CC1C8D407D00D7DBD7 /* NSDictionary+URL.m in Sources */,
 				D1E0E7F61C8D407D00D7DBD7 /* UINavigationItem+Margin.m in Sources */,
+				D1BE3F3B1C900B9C00F574DE /* DTContentModel.m in Sources */,
 				D1E0E7EE1C8D407D00D7DBD7 /* UIImageView+FaceAwareFill.m in Sources */,
 				D1E0E80A1C8D409000D7DBD7 /* UIView+Extension.m in Sources */,
 				D1E0E7F01C8D407D00D7DBD7 /* UIImageView+Reflect.m in Sources */,

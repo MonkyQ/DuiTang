@@ -31,7 +31,7 @@
 
 - (void)configureModel:(DetaiList *)model {
     DetaiListPhoto *photo = model.photo;
-    NSLog(@"%@",photo.path);
+   // NSLog(@"%@",photo.path);
     NSString *str =photo.path;
     NSString *path = [str stringByReplacingOccurrencesOfString:@"_webp" withString:@""];
     [self.photoView setImageWithURL:[NSURL URLWithString:path]];
