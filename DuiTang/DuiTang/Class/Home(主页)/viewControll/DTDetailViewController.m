@@ -44,6 +44,9 @@
     self.scrollView = scrollView;
     scrollView.frame = (CGRect){{0,64,},self.view.bounds.size };
     
+    //隐藏scroll的垂直方向上的进度条;
+    scrollView.showsHorizontalScrollIndicator = NO;
+    
     DTDetailHeadView *headView = [[DTDetailHeadView alloc]init];
     headView.modelF = self.detailF;
 

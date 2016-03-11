@@ -8,7 +8,10 @@
 
 #import "DTCommenView.h"
 #import "DTWaterModel.h"
-
+@interface DTCommenView ()
+//设置点赞星星数量
+@property (nonatomic ,weak)UIButton *starButton;
+@end
 @implementation DTCommenView
 
 /*
@@ -60,18 +63,21 @@
 {
     [self setupBtnWithIcon:@"blog_list_icon_comments" title:@"0"];
     [self setupBtnWithIcon:@"blog_list_icon_good" title:@"0"];
-    [self setupBtnWithIcon:@"blog_list_icon_star" title:self.model.favorite_count];
+    self.starButton = [self setupBtnWithIcon:@"blog_list_icon_star" title:self.model.favorite_count];
 
 }
 -(void)setModel:(DTWaterModel *)model{
     _model = model;
+    
+    //数据返回之后，在重新设置star数量
+    [self.starButton setTitle:model.favorite_count forState:UIControlStateNormal];
     
 }
 -(void)layoutSubviews
 {
     [super layoutSubviews];
     // 设置按钮的frame
-    int btnCount = self.subviews.count;
+    long btnCount = self.subviews.count;
     CGFloat margin = 3;
     CGFloat btnW = (self.width - (btnCount + 1) * margin) / btnCount;
     CGFloat btnY = 5;
