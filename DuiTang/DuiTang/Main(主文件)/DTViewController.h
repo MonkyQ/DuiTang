@@ -9,5 +9,21 @@
 #import <UIKit/UIKit.h>
 
 @interface DTViewController : UITabBarController
+{
+    EMConnectionState _connectionState;
+}
 
+- (void)jumpToChatList;
+
+- (void)setupUntreatedApplyCount;
+
+- (void)setupUnreadMessageCount;
+
+- (void)networkChanged:(EMConnectionState)connectionState;
+
+- (void)didReceiveLocalNotification:(UILocalNotification *)notification;
+
+- (void)playSoundAndVibration;
+
+- (void)showNotificationWithMessage:(EMMessage *)message;
 @end
