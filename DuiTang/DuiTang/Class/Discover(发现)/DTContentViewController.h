@@ -10,5 +10,5 @@
 
 @interface DTContentViewController : UIViewController
 
-
+@property (nonatomic,strong)NSNumber *number;
 @end

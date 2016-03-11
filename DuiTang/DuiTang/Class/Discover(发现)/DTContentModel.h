@@ -18,6 +18,8 @@
 @class ContentPhoto;
 @class ContentSender;
 @class ContentAlbum;
+@class Contentrelated;
+@protocol Contentrelated;
 @interface Content : JSONModel
 @property (nonatomic,strong)NSString *add_datetime;
 @property (nonatomic,strong)NSString *add_datetime_pretty;
@@ -37,6 +39,7 @@
 @property (nonatomic,strong)NSNumber *next_id;
 @property (nonatomic,strong)ContentPhoto *photo;
 @property (nonatomic,strong)NSNumber *prev_id;
+@property (nonatomic,strong)NSArray<Contentrelated> *related_albums;
 @property (nonatomic,strong)NSNumber *reply_count;
 @property (nonatomic,strong)ContentSender *sender;
 @property (nonatomic,strong)NSNumber *sender_id;
@@ -67,4 +70,23 @@
 @property (nonatomic,strong)NSString *name;
 @property (nonatomic,strong)NSNumber *status;
 @end
+
+@class ContentrelatedUser;
+@interface Contentrelated : JSONModel
+@property (nonatomic,strong)NSString *name;
+@property (nonatomic,strong)NSNumber *Aid;
+@property (nonatomic,strong)ContentrelatedUser *user;
+@property (nonatomic,strong)NSArray *covers;
+
+@end
+
+@interface ContentrelatedUser : JSONModel
+@property (nonatomic,strong)NSString *username;
+@property (nonatomic,strong)NSNumber *AiD;
+@property (nonatomic,strong)NSString *avatar;
+@end
+
+
+
+
 

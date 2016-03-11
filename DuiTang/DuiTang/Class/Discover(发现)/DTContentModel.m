@@ -32,8 +32,6 @@
 {
     return [[JSONKeyMapper alloc] initWithDictionary:@{@"id":@"Cid"}];
 }
-
-
 @end
 
 @implementation ContentAlbum
@@ -42,7 +40,21 @@
 {
     return [[JSONKeyMapper alloc] initWithDictionary:@{@"id":@"Bid"}];
 }
-
-
 @end
 
+@implementation Contentrelated
+
++ (JSONKeyMapper *)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{@"id":@"Aid"}];
+}
+@end
+
+@implementation ContentrelatedUser
+
++ (JSONKeyMapper *)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{@"id":@"AiD"}];
+}
+
+@end

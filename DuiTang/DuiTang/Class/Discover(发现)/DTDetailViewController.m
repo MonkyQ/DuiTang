@@ -95,7 +95,8 @@ static NSString *cellID = @"DTDetailCollectionViewCell";
     NSString *p4 = [NSString stringWithFormat:@"cate_key=%@",par];
      NSString *p5 = @"&screen_width=320&__dtac=%257B%2522_r%2522%253A%2520%2522870068%2522%257D";
     NSString *path = [NSString stringWithFormat:@"%@%@%@%@%@",p1,p2,p3,p4,p5];
-   // NSLog(@"%@",path);
+    
+    NSLog(@"%@",path);
     
     [DTNetHelper getDataWithParam:nil andPath:path andComplete:^(BOOL success, id result) {
         if (success) {
@@ -161,9 +162,6 @@ static NSString *cellID = @"DTDetailCollectionViewCell";
     
     NSDictionary *titleDict = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:12]};
     CGFloat titleH = [list.msg boundingRectWithSize:CGSizeMake(w, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:titleDict context:nil].size.height;
-   // NSLog(@"titleH---%f",titleH);
-    
-  //  NSLog(@"itemWidth * h / w +titleH---%f",itemWidth * h / w +titleH);
     return itemWidth * h / w +titleH+18;
 }
 
@@ -188,6 +186,8 @@ static NSString *cellID = @"DTDetailCollectionViewCell";
     NSLog(@"0.0");
     DTContentViewController *contentVC = [[DTContentViewController alloc]init];
     contentVC.navigationItem.title = @"详情";
+    DetaiList *model = self.detailArr[indexPath.item];
+    contentVC.number = model.Did;
     [self.navigationController pushViewController:contentVC  animated:YES];
 }
 
