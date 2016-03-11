@@ -9,7 +9,7 @@
 #import "DTNetHelper.h"
 #import "DTContentModel.h"
 #import "DTContentView.h"
-#import "DTAlbum.h"
+#import "DTAlbums.h"
 #import "UIControl+ActionBlocks.h"
 
 
@@ -92,7 +92,7 @@ static NSString *ContentcellID =@"DTContentTableViewCell";
     conView.frame = CGRectMake(12, 10, conView.Width, conView.Height);
     conView.backgroundColor = [UIColor whiteColor];
     //专辑部分
-    DTAlbum *albumView = [[DTAlbum alloc]init];
+    DTAlbums *albumView = [[DTAlbums alloc]init];
     [albumView configureModel:model];
     albumView.frame = CGRectMake(11, conView.Height+20,conView.Width ,albumView.Height+60);
     albumView.backgroundColor = [UIColor whiteColor];

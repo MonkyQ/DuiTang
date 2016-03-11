@@ -10,7 +10,7 @@
 #import "DTContentModel.h"
 
 
-@interface DTAlbum : UIView
+@interface DTAlbums : UIView
 @property (nonatomic,assign)CGFloat Height;
 @property (nonatomic,assign)CGFloat Width;
 - (void)configureModel:(Content *)model;

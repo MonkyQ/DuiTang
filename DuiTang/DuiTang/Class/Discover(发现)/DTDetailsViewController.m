@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Monky. All rights reserved.
 //
 
-#import "DTDetailViewController.h"
+#import "DTDetailsViewController.h"
 #import "MKWaterflowLayout.h"
 #import "DTDetailCollectionViewCell.h"
 #import "DTNetHelper.h"
@@ -16,7 +16,7 @@
 
 #import "DTContentViewController.h"
 
-@interface DTDetailViewController ()<MKWaterflowLayoutDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
+@interface DTDetailsViewController ()<MKWaterflowLayoutDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 {
     NSInteger _currentPage;
 }
@@ -26,7 +26,7 @@
 
 @end
 static NSString *cellID = @"DTDetailCollectionViewCell";
-@implementation DTDetailViewController
+@implementation DTDetailsViewController
 
 - (NSMutableArray *)detailArr
 {

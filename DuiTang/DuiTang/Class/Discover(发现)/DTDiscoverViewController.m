@@ -10,7 +10,7 @@
 #import "DTNetHelper.h"
 #import "DTTitleModel.h"
 #import "DTTitleCell.h"
-#import "DTDetailViewController.h"
+#import "DTDetailsViewController.h"
 
 static NSString * const DTTitleCellId = @"Title";
 @interface DTDiscoverViewController ()
@@ -143,7 +143,7 @@ static NSString * const DTTitleCellId = @"Title";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    DTDetailViewController *dtVC = [[DTDetailViewController alloc]init];
+    DTDetailsViewController *dtVC = [[DTDetailsViewController alloc]init];
     dtVC.hidesBottomBarWhenPushed = YES;
     dtVC.view.backgroundColor = [UIColor colorWithRed:1.000 green:0.400 blue:0.400 alpha:1.000];
     Data *data =self.model.data[indexPath.section];

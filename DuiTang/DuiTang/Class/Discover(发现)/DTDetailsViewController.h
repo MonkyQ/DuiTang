@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DTDetailViewController : UIViewController
+@interface DTDetailsViewController : UIViewController
 @property (nonatomic,strong)NSString *cat_key;
 @end

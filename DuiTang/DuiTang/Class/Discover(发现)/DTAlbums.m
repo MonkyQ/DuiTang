@@ -6,10 +6,10 @@
 //  Copyright © 2016年 Monky. All rights reserved.
 //
 
-#import "DTAlbum.h"
+#import "DTAlbums.h"
 #import "UIKit+AFNetworking.h"
 
-@implementation DTAlbum
+@implementation DTAlbums
 
 - (void)configureModel:(Content *)model
 {
