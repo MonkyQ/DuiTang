@@ -1,6 +1,9 @@
 {
   "images" : [
     {
+      "idiom" : "universal"
+    },
+    {
       "idiom" : "universal",
       "filename" : "blog_list_icon_star.png",
       "scale" : "1x"

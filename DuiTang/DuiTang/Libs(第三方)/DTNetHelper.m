@@ -53,11 +53,12 @@ static DTNetHelper * _shareManager;
             case AFNetworkReachabilityStatusReachableViaWWAN: {
                 
                 
+                NSLog(@"手机网络");
                 break;
             }
             case AFNetworkReachabilityStatusReachableViaWiFi: {
                 
-                
+                NSLog(@"WIFI网络");
                 break;
             }
         }
@@ -70,6 +71,7 @@ static DTNetHelper * _shareManager;
 
 // 封装 Post 请求，成功和失败在一个 block 里面处理
 + (void)postWithParam:(NSDictionary *)params andPath:(NSString *)path andComplete:(void (^)(BOOL success, id result))complete {
+    [[[self shareManager] operationQueue] cancelAllOperations];
     [[self shareManager] POST:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         // 请求成功，block 返回服务器返回的数据。
         // 这里是因为服务器返回数据不一定为字符串或者是 json 数据，所以不做其他处理，直接返回，如果是其他需求，也可以再继续进行其他处理
@@ -82,6 +84,7 @@ static DTNetHelper * _shareManager;
 
 // 封装 Get 请求，成功和失败分开处理
 + (void)getDataWithParam:(NSDictionary *)params andPath:(NSString *)path andComplete:(void (^)(BOOL success, id result))complete {
+    
     [[self shareManager] GET:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         complete(YES, responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
