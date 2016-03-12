@@ -45,7 +45,7 @@
 
 //home板块
 #import "UIView+Extension.h"
-#define homePedding 10
+#define homePedding 3
 #define titleFont [UIFont systemFontOfSize:15]
 #define otherFont [UIFont systemFontOfSize:13]
 #define maxLine 6
@@ -91,7 +91,8 @@ static NSString *str3 = @"&include_fields=sender%2Calbum%2Cicon_url%2Creply_coun
 #define DTRandomColor DTColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 
 // 全局背景色
-#define DTGlobalBg DTColor(211, 211, 211)
+//DTColor(211, 211, 211)
+#define DTGlobalBg [UIColor colorWithWhite:0.858 alpha:1.000]
 
 //api
 #endif /* PrefixHeader_pch */

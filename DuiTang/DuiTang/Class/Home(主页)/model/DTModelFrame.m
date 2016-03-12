@@ -9,7 +9,7 @@
 #import "DTModelFrame.h"
 #import "DTHomeModel.h"
 
-#define marginLeft 5
+#define marginLeft 2
 
 @implementation DTModelFrame
 
@@ -76,7 +76,7 @@
     oriH = CGRectGetMaxY(self.dyInfoFrame);
     self.originalFrame =CGRectMake(oriX, oriY, oriW, oriH);
     
-    self.maxHight = CGRectGetMaxY(self.dyInfoFrame)+oriX;
+    self.maxHight = CGRectGetMaxY(self.dyInfoFrame)+homePedding;
     }
 
   

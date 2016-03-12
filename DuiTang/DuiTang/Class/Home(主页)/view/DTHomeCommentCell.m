@@ -91,6 +91,8 @@
         [self.contentView addSubview:replayView];
         self.replayView = replayView;
         
+        //设置cell颜色为全局背景颜色
+        self.backgroundColor = DTGlobalBg;
         
     }
     return self;
@@ -117,7 +119,8 @@
     
     //内容
     self.contentButton.frame = commentF.contentFrame;
-    UIImage *image = [UIImage imageNamed:@"chat_recive_press_pic"];
+    //修改图片为白色背景
+    UIImage *image = [UIImage imageNamed:@"chat_recive_nor"];
     image = [self resizeImageWithImage:image];
     [self.contentButton setBackgroundImage:image forState:UIControlStateNormal];
     [self.contentButton setTitle:comment.content forState:UIControlStateNormal];

@@ -179,7 +179,8 @@
 //    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.edges.equalTo(self.view);
 //    }];
-    tableView.backgroundColor = [UIColor grayColor];
+    //修改为全局背景色
+    tableView.backgroundColor = DTGlobalBg;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     self.tableView = tableView;
