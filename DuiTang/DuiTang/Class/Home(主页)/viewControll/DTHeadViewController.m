@@ -124,6 +124,7 @@
 -(void)setupColltionView
 
 {
+    ///mei
     //配置collectionview
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
     [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
