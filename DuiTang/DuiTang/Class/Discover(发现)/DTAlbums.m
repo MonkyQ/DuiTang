@@ -8,6 +8,14 @@
 
 #import "DTAlbums.h"
 #import "UIKit+AFNetworking.h"
+#import "UIView+ViewController.h"
+#import "DTWaterFlowController.h"
+
+@interface DTAlbums ()
+
+//@property (nonatomic,)
+
+@end
 
 @implementation DTAlbums
 
@@ -46,7 +54,7 @@
         CGFloat y = 10;
         ablumView.frame = CGRectMake(x, y, w, w);
         
-        UIGestureRecognizer *g = [[UIGestureRecognizer alloc]initWithTarget:self action:@selector(touchImage)];
+        UIGestureRecognizer *g = [[UIGestureRecognizer alloc]initWithTarget:self action:@selector(touchImage:)];
         [ablumView addGestureRecognizer:g];
         
         UILabel *nameLabel = [[UILabel alloc]init];
@@ -71,9 +79,11 @@
     scView.contentSize = CGSizeMake(self.Width, 0);
 }
 
-- (void)touchImage
+- (void)touchImag:(Content *)model
 {
     
+    DTWaterFlowController *waterVC = [[DTWaterFlowController alloc]init];
+    [self.viewController.navigationController pushViewController:waterVC animated:YES];
 }
 
 @end

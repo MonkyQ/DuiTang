@@ -72,10 +72,7 @@ static NSString *ContentcellID =@"DTContentTableViewCell";
             });
             NSLog(@"请求成功");
         }else
-        {
-            
-            
-            
+        {       
             NSLog(@"------------%@",result);
         }
     }];
