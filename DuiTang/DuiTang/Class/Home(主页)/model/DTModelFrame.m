@@ -34,7 +34,7 @@
     _model = model;
     
     CGFloat oriX = marginLeft;
-    CGFloat oriY = homePedding;
+    CGFloat oriY = marginLeft;
     CGFloat oriW = mainScreenWidth-(2*marginLeft);
     CGFloat oriH = 0;
 
@@ -76,7 +76,7 @@
     oriH = CGRectGetMaxY(self.dyInfoFrame);
     self.originalFrame =CGRectMake(oriX, oriY, oriW, oriH);
     
-    self.maxHight = CGRectGetMaxY(self.dyInfoFrame)+homePedding;
+    self.maxHight = CGRectGetMaxY(self.originalFrame);
     }
 
   

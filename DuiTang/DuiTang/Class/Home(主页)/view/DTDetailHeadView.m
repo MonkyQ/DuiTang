@@ -74,11 +74,16 @@
        DTPhoto *pic = self.modelF.detail.photo;
         
         MJPhoto *photo = [[MJPhoto alloc] init];
+    
+    
         // 设置图片的路径
      NSString *str = [pic.path stringByReplacingOccurrencesOfString:@"_webp" withString:@""];
         photo.url = [NSURL URLWithString:str];
         // 设置来源于哪一个UIImageView
         photo.srcImageView =(UIImageView *) tap.view;
+    
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressClick:)];
+    [photo.srcImageView addGestureRecognizer:longPress];
         [photos addObject:photo];
   
     browser.photos = photos;
@@ -87,9 +92,27 @@
     browser.currentPhotoIndex = 0;
     
     // 3.显示浏览器
+    
     [browser show];
+    UIImage *image=photo.capture;
+    NSLog(@"%@=================",image);
+    
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+
+}
+ - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    if (error) {
+        NSLog(@"%@",error);
+    }
+    NSLog(@"保存图片");
+    
 }
 
+-(void)longPressClick:(UILongPressGestureRecognizer *)longPress
+{
+    NSLog(@"longPressClicklongPressClicklongPressClicklongPressClicklongPressClick");
+}
 
 
 -(void)setModelF:(DTDetailFrame *)modelF

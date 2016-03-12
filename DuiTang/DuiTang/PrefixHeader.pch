@@ -45,7 +45,7 @@
 
 //home板块
 #import "UIView+Extension.h"
-#define homePedding 3
+#define homePedding 10
 #define titleFont [UIFont systemFontOfSize:15]
 #define otherFont [UIFont systemFontOfSize:13]
 #define maxLine 6
