@@ -98,6 +98,7 @@
                 
                 
                 [self.coll.mj_header endRefreshing];
+                
                 [self.modelArray addObjectsFromArray:marr];
                 
            
@@ -153,6 +154,7 @@
     DTWaterFlowCell *cell = [DTWaterFlowCell waterFlowCellWithNibWithCollnectionView:collectionView andIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
     cell.model = model;
+    self.title = model.model.album.name;
     
     return cell;
 }

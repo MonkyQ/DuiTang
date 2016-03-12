@@ -10,6 +10,9 @@
 #import "DTDetail.h"
 #import "DTAlbum.h"
 #import "DTPhoto.h"
+//图片游览器
+#import "MJPhotoBrowser.h"
+#import "MJPhoto.h"
 
 #import "DTDetailContentView.h"
 
@@ -32,6 +35,10 @@
         
         UIImageView *imageView = [[UIImageView alloc]init];
         [self addSubview:imageView];
+        imageView.userInteractionEnabled = YES;
+        //给imageview添加放大图片手势
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClick:)];
+        [imageView addGestureRecognizer:tap];
         self.imageView = imageView;
         
         DTDetailContentView *contentView = [[DTDetailContentView alloc]init];
@@ -54,6 +61,36 @@
     }
     return self;
 }
+
+- (void)tapClick:(UITapGestureRecognizer *)tap
+{
+    // 1.创建图片浏览器
+    MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
+    
+    // 2.设置图片浏览器显示的所有图片
+    NSMutableArray *photos = [NSMutableArray array];
+  
+
+       DTPhoto *pic = self.modelF.detail.photo;
+        
+        MJPhoto *photo = [[MJPhoto alloc] init];
+        // 设置图片的路径
+     NSString *str = [pic.path stringByReplacingOccurrencesOfString:@"_webp" withString:@""];
+        photo.url = [NSURL URLWithString:str];
+        // 设置来源于哪一个UIImageView
+        photo.srcImageView =(UIImageView *) tap.view;
+        [photos addObject:photo];
+  
+    browser.photos = photos;
+    
+    // 3.设置默认显示的图片索引
+    browser.currentPhotoIndex = 0;
+    
+    // 3.显示浏览器
+    [browser show];
+}
+
+
 
 -(void)setModelF:(DTDetailFrame *)modelF
 {

@@ -49,6 +49,8 @@
 #define titleFont [UIFont systemFontOfSize:15]
 #define otherFont [UIFont systemFontOfSize:13]
 #define maxLine 6
+//
+#define homeTextColor [UIColor colorWithWhite:0.600 alpha:1.000]
 
 //讨论页面
 static NSString *disStr1 = @"http://203.80.144.213/napi/topic/detail/?screen_width=1080&screen_height=1920&app_version=70&platform_version=5.0.2&__domain=www.duitang.com&platform_name=Android&device_platform=Redmi%2BNote%2B2&topic_";
