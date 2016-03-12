@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "DTPhoto.h"
+#import "DTAlbum.h"
 
 @interface DTWaterModel : NSObject
 @property (nonatomic ,strong)NSString *add_datetime;
 @property (strong ,nonatomic) NSString * add_datetime_pretty;
 @property (strong ,nonatomic) NSString * add_datetime_ts;
 @property (strong ,nonatomic) NSString * buyable;
+@property (strong ,nonatomic)DTAlbum *album;
 @property (strong ,nonatomic) NSString * extra_type;
 @property (strong ,nonatomic) NSString * favorite_count;
 @property (strong ,nonatomic) NSString * icon_url;
