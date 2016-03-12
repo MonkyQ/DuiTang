@@ -43,7 +43,9 @@
         make.left.equalTo(0);
         make.right.equalTo(0);
         make.top.equalTo(NAVH+20);
-        make.bottom.equalTo(-TabbarH);
+         
+         //修改下面有黑边的bug
+        make.bottom.equalTo(@0);
     }];
     [super viewDidLoad];
     // Do any additional setup after loading the view.

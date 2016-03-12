@@ -44,11 +44,17 @@
 
 
 //home板块
+#import "UIBarButtonItem+Extension.h"
 #import "UIView+Extension.h"
+#import "UIImage+Extension.h"
 #define homePedding 10
 #define titleFont [UIFont systemFontOfSize:15]
 #define otherFont [UIFont systemFontOfSize:13]
 #define maxLine 6
+#define HMNavigationTitleFont [UIFont boldSystemFontOfSize:20]
+
+#define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+
 //
 #define homeTextColor [UIColor colorWithWhite:0.600 alpha:1.000]
 

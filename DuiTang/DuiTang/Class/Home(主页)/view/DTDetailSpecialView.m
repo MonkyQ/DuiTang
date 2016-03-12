@@ -38,12 +38,13 @@
         UIScrollView *scroll = [[UIScrollView alloc]init];
         scroll.userInteractionEnabled = YES;
         //[scroll removeGestureRecognizer:scroll.panGestureRecognizer];
-        scroll.backgroundColor = [UIColor whiteColor];
+        scroll.backgroundColor = [UIColor whiteColor];;
         [self addSubview:scroll];
         self.scroll = scroll;
         scroll.showsHorizontalScrollIndicator = NO;
         scroll.showsVerticalScrollIndicator = NO;
         [self addGestureRecognizer:scroll.panGestureRecognizer];
+        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }
@@ -75,6 +76,8 @@
             imageView.x = homePedding +(width +homePedding)*i;
             imageView.y = homePedding;
             if (i==0) {
+                
+                //在第一张图片上面加一个 首发label
                 UILabel *labal = [[UILabel alloc]init];
                 labal.backgroundColor = [UIColor redColor];
                 labal.text = @"首发";

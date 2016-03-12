@@ -43,11 +43,12 @@
         
         DTDetailContentView *contentView = [[DTDetailContentView alloc]init];
         [self addSubview:contentView];
-        contentView.backgroundColor = [UIColor grayColor];
+        contentView.backgroundColor = [UIColor whiteColor];;
         self.contentView = contentView;
         
         UILabel *contentLabel = [[UILabel alloc] init];
         [self addSubview:contentLabel];
+        contentLabel.backgroundColor = [UIColor whiteColor];
    
         contentLabel.numberOfLines = 0;
         contentLabel.font = titleFont;
@@ -132,7 +133,7 @@
     
     self.contentLabel.frame = modelF.msgFrame;
     self.contentLabel.text = detail.msg;
-    self.contentLabel.backgroundColor = DTGlobalBg;
+    
     
     
     self.x = 0;

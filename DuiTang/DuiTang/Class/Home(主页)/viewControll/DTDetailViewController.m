@@ -23,6 +23,9 @@
 
 #import "DTDetail.h"
 
+
+#define navHeight 64
+
 @interface DTDetailViewController ()<UIScrollViewDelegate>
 @property (nonatomic,weak)UIScrollView *scrollView;
 @property (nonatomic ,strong)DTDetailFrame *detailF;
@@ -42,7 +45,7 @@
     UIScrollView *scrollView = [[UIScrollView alloc]init];
     [self.view addSubview:scrollView];
     self.scrollView = scrollView;
-    scrollView.frame = (CGRect){{0,64,},self.view.bounds.size };
+    scrollView.frame = (CGRect){{0,navHeight,},self.view.bounds.size };
     
     //隐藏scroll的垂直方向上的进度条;
     scrollView.showsHorizontalScrollIndicator = NO;
@@ -70,6 +73,7 @@
     }
     self.scrollView.contentSize = CGSizeMake(0, maxContentSize);
     
+    self.view.backgroundColor = DTGlobalBg;
     
 }
 
