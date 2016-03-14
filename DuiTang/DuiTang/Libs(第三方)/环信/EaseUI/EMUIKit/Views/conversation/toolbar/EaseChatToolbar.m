@@ -536,8 +536,13 @@
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
     if ([text isEqualToString:@"\n"]) {
-        if ([self.delegate respondsToSelector:@selector(didSendText:)]) {
-            [self.delegate didSendText:textView.text];
+        if ([self.delegate respondsToSelector:@selector(didSendText:)])
+        {
+            NSString * accountName=[[NSUserDefaults standardUserDefaults]objectForKey:TSName];
+            NSDictionary *ext = @{@"accountName":accountName};
+            [self.delegate didSendText:textView.text withExt:ext];
+            
+            //[self.delegate didSendText:textView.text];
             self.inputTextView.text = @"";
             [self _willShowInputTextViewToHeight:[self _getTextViewContentH:self.inputTextView]];;
         }

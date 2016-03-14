@@ -19,9 +19,13 @@
 }
 -(void)configWithEmgroup:(EMGroup *)group
 {
-    NSString * str=[NSString stringWithFormat:@"%@(当前%d人)",group.subject,group.occupantsCount];
+    NSString * str=[NSString stringWithFormat:@"%@(当前%ld人)",group.subject,group.occupantsCount];
+    self.titleLabel.font=[UIFont systemFontOfSize:15];
     self.titleLabel.text=str;
+    
     NSString * str2=[NSString stringWithFormat:@"群简介：%@",group.description];
+    self.describeLabel.font=[UIFont systemFontOfSize:13];
+    self.describeLabel.textColor=[UIColor grayColor];
     self.describeLabel.text=str2;
 }
 - (IBAction)addGroupBtnAction:(UIButton *)sender

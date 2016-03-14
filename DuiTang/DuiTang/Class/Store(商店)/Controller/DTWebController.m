@@ -7,12 +7,14 @@
 //
 
 #import "DTWebController.h"
+#import <SVProgressHUD.h>
 #import "DTWebModel.h"
 
-@interface DTWebController ()
+@interface DTWebController ()<UIWebViewDelegate>
 @property (nonatomic,strong)UIWebView * webView;
 @property (nonatomic,strong)NSNumber * modId;
 @property (nonatomic,strong)DTWebModel * mod;
+@property (nonatomic,strong)SVProgressHUD * progress;
 
 @end
 
@@ -31,10 +33,9 @@
 }
 - (void)viewDidLoad
 {
-    
     [self downLoadData];
-    
     self.webView=[[UIWebView alloc]init];
+    self.webView.delegate=self;
     [self.view addSubview:self.webView];
     self.automaticallyAdjustsScrollViewInsets=NO;
     
@@ -50,6 +51,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
 -(void)downLoadData
 {
     //下载
@@ -81,6 +83,16 @@
         }
     }];
 }
+#pragma mark webViewDelegate
+-(void)webViewDidStartLoad:(UIWebView *)webView
+{
+    [SVProgressHUD show];
+}
+-(void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [SVProgressHUD dismiss];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -89,6 +101,11 @@
 /*
 #pragma mark - Navigation
 
+ 文／取水（简书作者）
+ 原文链接：http://www.jianshu.com/p/ff34d77a42bc
+ 著作权归作者所有，转载请联系作者获得授权，并标注“简书作者”。
+ 
+ shouldChangeTextInRange
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].

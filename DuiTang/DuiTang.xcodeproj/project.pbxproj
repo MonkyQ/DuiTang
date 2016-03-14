@@ -352,7 +352,6 @@
 		D18EE5081C92D88E00ADCE52 /* libHyphenateSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D18EE3A31C92D88D00ADCE52 /* libHyphenateSDK.a */; };
 		D18EE5091C92D88E00ADCE52 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D18EE3A41C92D88D00ADCE52 /* libopencore-amrnb.a */; };
 		D18EE50B1C92D88E00ADCE52 /* CCEaseRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = D18EE3A71C92D88D00ADCE52 /* CCEaseRefresh.m */; };
-		D18EE50C1C92D88E00ADCE52 /* SSApplicationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D18EE3AA1C92D88D00ADCE52 /* SSApplicationInfo.m */; };
 		D18EE51D1C92D88E00ADCE52 /* UINavigationController+AOP.m in Sources */ = {isa = PBXBuildFile; fileRef = D18EE3C31C92D88E00ADCE52 /* UINavigationController+AOP.m */; };
 		D18EE5231C92D93400ADCE52 /* NSObject+AOP.m in Sources */ = {isa = PBXBuildFile; fileRef = D18EE5221C92D93400ADCE52 /* NSObject+AOP.m */; };
 		D18EE5251C92D9DB00ADCE52 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18EE5241C92D9DB00ADCE52 /* Social.framework */; };
@@ -1096,8 +1095,6 @@
 		D18EE3A51C92D88D00ADCE52 /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
 		D18EE3A61C92D88D00ADCE52 /* CCEaseRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEaseRefresh.h; sourceTree = "<group>"; };
 		D18EE3A71C92D88D00ADCE52 /* CCEaseRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEaseRefresh.m; sourceTree = "<group>"; };
-		D18EE3A91C92D88D00ADCE52 /* SSApplicationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSApplicationInfo.h; sourceTree = "<group>"; };
-		D18EE3AA1C92D88D00ADCE52 /* SSApplicationInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSApplicationInfo.m; sourceTree = "<group>"; };
 		D18EE3C21C92D88E00ADCE52 /* UINavigationController+AOP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+AOP.h"; sourceTree = "<group>"; };
 		D18EE3C31C92D88E00ADCE52 /* UINavigationController+AOP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+AOP.m"; sourceTree = "<group>"; };
 		D18EE5211C92D93400ADCE52 /* NSObject+AOP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AOP.h"; sourceTree = "<group>"; };
@@ -2613,15 +2610,6 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
-		D18EE3A81C92D88D00ADCE52 /* device */ = {
-			isa = PBXGroup;
-			children = (
-				D18EE3A91C92D88D00ADCE52 /* SSApplicationInfo.h */,
-				D18EE3AA1C92D88D00ADCE52 /* SSApplicationInfo.m */,
-			);
-			path = device;
-			sourceTree = "<group>";
-		};
 		D18EE53E1C92DE5900ADCE52 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -2912,7 +2900,6 @@
 				D18EE1451C92D88D00ADCE52 /* 环信 */,
 				D18EE3A61C92D88D00ADCE52 /* CCEaseRefresh.h */,
 				D18EE3A71C92D88D00ADCE52 /* CCEaseRefresh.m */,
-				D18EE3A81C92D88D00ADCE52 /* device */,
 				D18EE3C21C92D88E00ADCE52 /* UINavigationController+AOP.h */,
 				D18EE3C31C92D88E00ADCE52 /* UINavigationController+AOP.m */,
 				FCD96A381C8D70C8004C3BC6 /* network */,
@@ -3327,7 +3314,7 @@
 				TargetAttributes = {
 					D1E0E6DD1C8D2E5700D7DBD7 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = D8T53M5XGA;
+						DevelopmentTeam = 26J52EZXXR;
 					};
 					D1E0E6F61C8D2E5700D7DBD7 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -3657,7 +3644,6 @@
 				D1E0E7EC1C8D407D00D7DBD7 /* UIImageView+Addition.m in Sources */,
 				D18EE4311C92D88E00ADCE52 /* EaseEmojiEmoticons.m in Sources */,
 				D18EE3C51C92D88E00ADCE52 /* AppDelegate+EaseMobDebug.m in Sources */,
-				D18EE50C1C92D88E00ADCE52 /* SSApplicationInfo.m in Sources */,
 				D1C5DBD81C8EC1D50096B258 /* DTDetailModel.m in Sources */,
 				D18EE4FD1C92D88E00ADCE52 /* DebugViewController.m in Sources */,
 				D18EE41B1C92D88E00ADCE52 /* PSTCollectionViewFlowLayout.m in Sources */,
@@ -4077,7 +4063,7 @@
 					"$(PROJECT_DIR)/DuiTang/Libs(第三方)/环信/HyphenateSDK/lib",
 					"$(PROJECT_DIR)/DuiTang/Libs(第三方)/环信",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Monky.DuiTang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Monky.DuiTang1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -4105,7 +4091,7 @@
 					"$(PROJECT_DIR)/DuiTang/Libs(第三方)/环信/HyphenateSDK/lib",
 					"$(PROJECT_DIR)/DuiTang/Libs(第三方)/环信",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Monky.DuiTang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Monky.DuiTang1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

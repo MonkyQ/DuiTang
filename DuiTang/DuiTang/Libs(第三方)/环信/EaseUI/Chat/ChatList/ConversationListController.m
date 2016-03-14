@@ -73,8 +73,56 @@
 //修改
 -(void)configNav
 {
-    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"查看所有群" style:UIBarButtonItemStylePlain target:self action:@selector(rightAction)];
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"nav_createGroup"] style:UIBarButtonItemStylePlain target:self action:@selector(rightAction)];
+
+    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"tab_icon_me"] style:UIBarButtonItemStylePlain target:self action:@selector(leftActhion)];
 }
+-(void)leftActhion
+{
+    NSString * userName=[[[UIDevice currentDevice] identifierForVendor].UUIDString substringToIndex:5];
+    userName = [NSString stringWithFormat:@"user%@",userName];
+    NSLog(@"%@",userName);
+    [self loginEaseMob:userName];
+            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"正在带您自动登录" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction * action=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:action];
+        [self presentViewController:alert animated:YES completion:nil];
+}
+//登陆
+- (void)loginEaseMob:(NSString *)userID
+{
+    NSLog(@"%@",userID);
+    NSString * psw= [NSString stringWithFormat:@"p%@",userID];
+    EMError *error = [[EMClient sharedClient] loginWithUsername:userID password:psw];
+    if (!error)
+    {
+        NSLog(@"登陆成功");
+        
+        [[EMClient sharedClient].options setIsAutoLogin:NO];
+    }
+    else
+    {//6eh4351041
+        NSLog(@"%@",error);
+        EMError * error1 = [[EMClient sharedClient] registerWithUsername:userID password:psw];
+        if (error1) {
+            NSLog(@"%@",error1);
+        }
+        EMError *error2 = [[EMClient sharedClient] loginWithUsername:userID password:psw];
+        if (!error2)
+        {
+            NSLog(@"登陆成功");
+            [[EMClient sharedClient].options setIsAutoLogin:NO];
+        }
+        else
+        {
+            NSLog(@"%@",error2);
+        }
+    }
+    //171198851175154144
+    //EMError * error;
+    [[EMClient sharedClient].groupManager joinPublicGroup:@"171204808638726604" error:&error];
+}
+
 -(void)rightAction
 {
     [self.navigationController pushViewController:[TSAllGroupController new] animated:YES];

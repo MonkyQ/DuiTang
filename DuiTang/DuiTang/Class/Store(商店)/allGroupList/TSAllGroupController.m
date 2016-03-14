@@ -15,7 +15,7 @@
     [super viewDidLoad];
     EMCursorResult * result=[[EMClient sharedClient].groupManager getPublicGroupsFromServerWithCursor:nil pageSize:-1 error:nil];
     NSArray * list= result.list;
-    self.dataArray=list;
+    self.dataArray=[NSMutableArray arrayWithArray:list];
 }
 -(void)setDataArray:(NSMutableArray *)dataArray
 {
