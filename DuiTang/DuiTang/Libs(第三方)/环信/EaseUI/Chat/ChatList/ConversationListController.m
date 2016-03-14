@@ -79,7 +79,7 @@
 }
 -(void)leftActhion
 {
-    NSString * userName=[[[UIDevice currentDevice] identifierForVendor].UUIDString substringToIndex:5];
+    NSString * userName=[[[UIDevice currentDevice] identifierForVendor].UUIDString substringToIndex:8];
     userName = [NSString stringWithFormat:@"user%@",userName];
     NSLog(@"%@",userName);
     [self loginEaseMob:userName];
