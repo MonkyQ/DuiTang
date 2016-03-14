@@ -7,6 +7,7 @@
 //
 
 #import "DTNetHelper.h"
+#import <SVProgressHUD.h>
 
 static DTNetHelper * _shareManager;
 @implementation DTNetHelper
@@ -46,13 +47,12 @@ static DTNetHelper * _shareManager;
                 break;
             }
             case AFNetworkReachabilityStatusNotReachable: {
-                
+                [SVProgressHUD showErrorWithStatus:@"网络错误！请检查您的网络！"];
                 NSLog(@"无网络");
                 break;
             }
             case AFNetworkReachabilityStatusReachableViaWWAN: {
-                
-                
+                [SVProgressHUD showInfoWithStatus:@"已切换成手机网络！"];
                 NSLog(@"手机网络");
                 break;
             }
