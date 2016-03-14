@@ -4072,7 +4072,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Monky.YoWu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "113a411d-c612-4320-8d90-d6d94c35d7e8";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -4101,7 +4101,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Monky.YoWu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "113a411d-c612-4320-8d90-d6d94c35d7e8";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
