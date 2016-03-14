@@ -11,6 +11,7 @@
 #import "DTTitleModel.h"
 #import "DTTitleCell.h"
 #import "DTDetailsViewController.h"
+#import "MJRefresh.h"
 
 static NSString * const DTTitleCellId = @"Title";
 @interface DTDiscoverViewController ()
@@ -31,12 +32,19 @@ static NSString * const DTTitleCellId = @"Title";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    [self createTableView];
+    [self setupRefresh];
+//    [self createTableView];
     //数据下载
-    [self downloadData];
+  //  [self downloadData];
    }
+- (void)setupRefresh
+{
+        [self createTableView];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(downloadData)];
+    [self.tableView.mj_header beginRefreshing];
 
+    
+}
 //创建表格
 - (void)createTableView
 {
@@ -59,11 +67,10 @@ static NSString * const DTTitleCellId = @"Title";
             self.dataArray =weakSelf.model.data;
             [self.dataArray removeObjectAtIndex:0];
             [self.dataArray removeObjectAtIndex:0];
-            
-       //     NSLog(@"dataArraydataArraydataArraydataArray%lu", self.dataArray.count);
             NSLog(@"%@",error);
             //刷新表格
             [weakSelf.tableView reloadData];
+            [self.tableView.mj_header endRefreshing];
         }else
         {
             NSLog(@"错误:%@",result);

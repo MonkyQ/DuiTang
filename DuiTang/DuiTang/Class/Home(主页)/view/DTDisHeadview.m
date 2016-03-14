@@ -50,7 +50,8 @@
         UILabel *nameLabel = [[UILabel alloc]init];
         [self addSubview:nameLabel];
         self.nameLabel = nameLabel;
-        nameLabel.textColor = [UIColor blueColor];
+        nameLabel.textColor = [UIColor colorWithRed:0.000 green:0.502 blue:1.000 alpha:1.000];
+
         nameLabel.font = [UIFont systemFontOfSize:14];
         
         UILabel *timeLabel = [[UILabel alloc]init];

@@ -9,6 +9,7 @@
 #import "DTContentView.h"
 #import "UIKit+AFNetworking.h"
 
+
 @interface DTContentView ()
 
 @property (nonatomic,strong) UIImageView *PhotoView;
@@ -16,6 +17,7 @@
 @property (nonatomic,strong) UILabel *MsgLabel;
 
 @property (nonatomic,strong) UILabel *timeLabel;
+
 @end
 
 
@@ -41,9 +43,8 @@
     PhotoView.frame = CGRectMake(0, 0, width, height);
     [self addSubview:PhotoView];
         NSLog(@"-----%f------%f",width,height);
-    
-    
-    
+    //手势放大保存
+
     //描述
     UILabel *MsgLabel = [[UILabel alloc]init];
     self.MsgLabel = MsgLabel;
@@ -106,16 +107,5 @@
     
 }
 
-
-
-//- (void)setFrame:(CGRect)frame
-//{
-//    frame.origin.x = 12;
-//    frame.size.width -= 2 * 12;
-//    frame.size.height -= 12;
-//    frame.origin.y += 12;
-//    
-//    [super setFrame:frame];
-//}
 
 @end

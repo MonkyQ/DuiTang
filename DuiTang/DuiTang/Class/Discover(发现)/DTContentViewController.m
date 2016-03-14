@@ -63,12 +63,15 @@ static NSString *ContentcellID =@"DTContentTableViewCell";
     [DTNetHelper getDataWithParam:nil andPath:path andComplete:^(BOOL success, id result) {
         if (success) {
             NSError *error;
+        
             weakSelf.model = [[DTContentModel alloc] initWithData:result error:&error];
             dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"dataArraydataArraydataArraydataArray%@", self.model);
                 
                 [self setupView];
                 //刷新表格
                 [weakSelf.tbView reloadData];
+                
             });
             NSLog(@"请求成功");
         }else
