@@ -102,11 +102,12 @@
 //}
 -(void)loadData
 {
-    
+   
 
     [DTNetHelper getDataWithParam:nil andPath:homeStr andComplete:^(BOOL success, id result) {
         
         if (success) {
+             [self.headArray removeAllObjects];
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingMutableContainers error:nil];
             NSDictionary *dataDict = dict[@"data"];
            
