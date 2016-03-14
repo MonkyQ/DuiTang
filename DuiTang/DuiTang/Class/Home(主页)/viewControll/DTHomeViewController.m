@@ -11,6 +11,7 @@
 #import "DTNetHelper.h"
 #import "MJExtension.h"
 #import "MJRefresh.h"
+#import <SVProgressHUD.h>
 
 #import "DTSmallTableViewCell.h"
 #import "DTBigTableViewCell.h"
@@ -60,7 +61,7 @@
     [super viewDidLoad];
        self.view.backgroundColor = [UIColor colorWithRed:0.480 green:0.758 blue:1.000 alpha:1.000];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
+    //[SVProgressHUD show];
     [self setupTableView];
     [self setupHeadView];
     [self setRefresh];
@@ -119,7 +120,7 @@
                     DTBigModelFrame *bFrame = [[DTBigModelFrame alloc]init];
                     bFrame.model = model;
                     //修改type 因为返回json数据被修改了
-                    if ([model.content_type isEqualToString:@"other"]) {
+                    if ([model.content_type isEqualToString:@"other"]||[model.dynamic_info isEqualToString:@"推广"]) {
                         [self.headArray addObject:bFrame];
                     }
                     
@@ -145,6 +146,7 @@
             
             [self.dataArray addObjectsFromArray:marr];
             dispatch_async(dispatch_get_main_queue(), ^{
+                //[SVProgressHUD dismiss];
                 [self.tableView reloadData];
                 [self.tableView.mj_header endRefreshing];
             });
@@ -298,7 +300,7 @@
 {
     //配置3D内容
     CATransform3D transform ;
-    transform = CATransform3DMakeRotation((90.0*M_PI)/180, 0.0, 0.7, 0.4);
+    transform = CATransform3DMakeRotation((30.0*M_PI)/180, 0.0, 0.7, 0.4);
     transform.m34 = 1.0/-600;
     
     
