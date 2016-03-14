@@ -9,6 +9,9 @@
 #import "DTContentView.h"
 #import "UIKit+AFNetworking.h"
 
+//图片游览器
+#import "MJPhotoBrowser.h"
+#import "MJPhoto.h"
 
 @interface DTContentView ()
 
@@ -18,6 +21,7 @@
 
 @property (nonatomic,strong) UILabel *timeLabel;
 
+@property (nonatomic,strong) ContentPhoto *photo;
 @end
 
 
@@ -29,6 +33,7 @@
         return;
     }
     ContentPhoto *photo =model.photo;
+    self.photo = photo;
     NSLog(@"______________%@",photo.width);
     NSString *str =photo.path;
     NSString *path = [str stringByReplacingOccurrencesOfString:@"_webp" withString:@""];
@@ -44,7 +49,9 @@
     [self addSubview:PhotoView];
         NSLog(@"-----%f------%f",width,height);
     //手势放大保存
-
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClick:)];
+    PhotoView.userInteractionEnabled = YES;
+    [PhotoView addGestureRecognizer:tap];
     //描述
     UILabel *MsgLabel = [[UILabel alloc]init];
     self.MsgLabel = MsgLabel;
@@ -107,5 +114,37 @@
     
 }
 
+- (void)tapClick:(UITapGestureRecognizer *)tap
+{
+    // 1.创建图片浏览器
+    MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
+    
+    // 2.设置图片浏览器显示的所有图片
+    NSMutableArray *photos = [NSMutableArray array];
+    
+    MJPhoto *photo = [[MJPhoto alloc] init];
+    
+    
+    // 设置图片的路径
+    NSString *str = [self.photo.path stringByReplacingOccurrencesOfString:@"_webp" withString:@""];
+    photo.url = [NSURL URLWithString:str];
+    // 设置来源于哪一个UIImageView
+    photo.srcImageView =(UIImageView *) tap.view;
+
+    [photos addObject:photo];
+    
+    browser.photos = photos;
+    
+    // 3.设置默认显示的图片索引
+    browser.currentPhotoIndex = 0;
+    
+    // 3.显示浏览器
+    
+    [browser show];
+    UIImage *image=photo.capture;
+    NSLog(@"%@=================",image);
+
+    
+}
 
 @end

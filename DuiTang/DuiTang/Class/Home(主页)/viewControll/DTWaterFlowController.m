@@ -71,8 +71,6 @@
     coll.backgroundColor = DTGlobalBg;
     coll.dataSource = self;
     coll.delegate = self ;
-    
-   
 }
 
 
@@ -91,9 +89,7 @@
                 frameModel.model = model;
                 [marr addObject:frameModel];
                 
-            }
-            
-            
+            }   
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 

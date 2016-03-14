@@ -3319,7 +3319,7 @@
 				TargetAttributes = {
 					D1E0E6DD1C8D2E5700D7DBD7 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 26J52EZXXR;
+						DevelopmentTeam = W272WDFC9W;
 					};
 					D1E0E6F61C8D2E5700D7DBD7 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -4052,6 +4052,7 @@
 			baseConfigurationReference = 9863A6FB9F240366DAC54E1D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
@@ -4069,7 +4070,7 @@
 					"$(PROJECT_DIR)/DuiTang/Libs(第三方)/环信/HyphenateSDK/lib",
 					"$(PROJECT_DIR)/DuiTang/Libs(第三方)/环信",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Monky.DuiTang1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Monky.YoWu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -4080,6 +4081,7 @@
 			baseConfigurationReference = 99FEBC651EA91D2BF1D619BA /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
@@ -4097,7 +4099,7 @@
 					"$(PROJECT_DIR)/DuiTang/Libs(第三方)/环信/HyphenateSDK/lib",
 					"$(PROJECT_DIR)/DuiTang/Libs(第三方)/环信",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Monky.DuiTang1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Monky.YoWu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

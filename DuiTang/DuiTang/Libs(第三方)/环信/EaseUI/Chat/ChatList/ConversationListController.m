@@ -5,7 +5,7 @@
 //  Created by dhc on 15/6/25.
 //  Copyright (c) 2015年 easemob.com. All rights reserved.
 //
-
+#import <SVProgressHUD.h>
 #import "ConversationListController.h"
 #import "TSAllGroupController.h"
 #import "ChatViewController.h"
@@ -67,6 +67,7 @@
     [self searchController];
     
     [self removeEmptyConversationsFromDB];
+    [self leftActhion];
     
     [self configNav];
 }
@@ -79,14 +80,30 @@
 }
 -(void)leftActhion
 {
+
+    [SVProgressHUD showWithStatus:@"自动登录中" maskType:SVProgressHUDMaskTypeGradient];
+    //[SVProgressHUD showInfoWithStatus:@"自动登录中" maskType:SVProgressHUDMaskTypeGradient];
+    //
+        dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+           dispatch_async(globalQueue, ^{
+    
+    if ([[EMClient sharedClient] isLoggedIn])
+    {
+        UIAlertController * alert1 = [UIAlertController alertControllerWithTitle:@"提示" message:@"您已登陆" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction * action=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+        [alert1 addAction:action];
+        [self presentViewController:alert1 animated:YES completion:nil];
+        [SVProgressHUD dismiss];
+        return;
+    }
+    
     NSString * userName=[[[UIDevice currentDevice] identifierForVendor].UUIDString substringToIndex:5];
     userName = [NSString stringWithFormat:@"user%@",userName];
     NSLog(@"%@",userName);
     [self loginEaseMob:userName];
-            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"正在带您自动登录" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction * action=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
-        [alert addAction:action];
-        [self presentViewController:alert animated:YES completion:nil];
+    
+
+        });
 }
 //登陆
 - (void)loginEaseMob:(NSString *)userID
@@ -118,15 +135,20 @@
             NSLog(@"%@",error2);
         }
     }
-    //171198851175154144
+    //173324112930800088
     //EMError * error;
-    [[EMClient sharedClient].groupManager joinPublicGroup:@"171204808638726604" error:&error];
+    [[EMClient sharedClient].groupManager joinPublicGroup:@"173324112930800088" error:&error];
+    [SVProgressHUD dismiss];
 }
 
 -(void)rightAction
 {
+    [SVProgressHUD show];
     [self.navigationController pushViewController:[TSAllGroupController new] animated:YES];
+    [SVProgressHUD dismiss];
+
 }
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

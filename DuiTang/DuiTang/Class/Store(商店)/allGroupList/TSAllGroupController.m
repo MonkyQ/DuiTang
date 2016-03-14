@@ -23,9 +23,6 @@
     [self.tableView reloadData];
 }
 
-
-
-
 #pragma delegate
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -37,7 +34,6 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
     //groupId  description  occupantsCount
     TSAllGroupListCell * cell = [TSAllGroupListCell cellWithTableView:tableView];
     EMGroup * group=self.dataArray[indexPath.row];
