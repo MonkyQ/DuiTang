@@ -36,7 +36,7 @@
 @property (nonatomic,strong)NSNumber *like_count;
 @property (nonatomic,strong)NSNumber *like_id;
 @property (nonatomic,strong)NSString *msg;
-@property (nonatomic,strong)NSNumber *next_id;
+//@property (nonatomic,strong)NSNumber *next_id;
 @property (nonatomic,strong)ContentPhoto *photo;
 //@property (nonatomic,strong)NSNumber *prev_id;
 @property (nonatomic,strong)NSArray<Contentrelated> *related_albums;

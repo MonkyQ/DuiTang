@@ -3319,7 +3319,7 @@
 				TargetAttributes = {
 					D1E0E6DD1C8D2E5700D7DBD7 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 26J52EZXXR;
+						DevelopmentTeam = W272WDFC9W;
 					};
 					D1E0E6F61C8D2E5700D7DBD7 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -4070,7 +4070,7 @@
 					"$(PROJECT_DIR)/DuiTang/Libs(第三方)/环信/HyphenateSDK/lib",
 					"$(PROJECT_DIR)/DuiTang/Libs(第三方)/环信",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Monky.DuiTang1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Monky.YoWu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -4099,7 +4099,7 @@
 					"$(PROJECT_DIR)/DuiTang/Libs(第三方)/环信/HyphenateSDK/lib",
 					"$(PROJECT_DIR)/DuiTang/Libs(第三方)/环信",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Monky.DuiTang1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Monky.YoWu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
