@@ -24,6 +24,14 @@
 - (void)awakeFromNib {
     // Initialization code
 }
+-(void)setFrame:(CGRect)frame
+{
+    CGRect changeFrame=CGRectMake(0, 0, frame.size.width, frame.size.height);
+    [super setFrame:changeFrame];
+    [UIView animateWithDuration:1 animations:^{
+        [super setFrame:frame];
+    } completion:nil];
+}
 
 - (void)configureModel:(Group *)model {
     
