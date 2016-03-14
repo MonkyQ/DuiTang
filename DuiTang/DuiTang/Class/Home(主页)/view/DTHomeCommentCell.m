@@ -57,7 +57,8 @@
         [self.contentView addSubview:nameLabel];
         self.nameLabel = nameLabel;
         self.nameLabel.font = [UIFont boldSystemFontOfSize:10];
-        nameLabel.textColor = [UIColor blueColor];
+        nameLabel.textColor = [UIColor colorWithRed:0.000 green:0.502 blue:1.000 alpha:1.000];
+
         
         //3.timeLabel
         UILabel * timeLabel = [[UILabel alloc] init];

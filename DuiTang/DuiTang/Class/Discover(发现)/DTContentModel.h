@@ -38,7 +38,7 @@
 @property (nonatomic,strong)NSString *msg;
 @property (nonatomic,strong)NSNumber *next_id;
 @property (nonatomic,strong)ContentPhoto *photo;
-@property (nonatomic,strong)NSNumber *prev_id;
+//@property (nonatomic,strong)NSNumber *prev_id;
 @property (nonatomic,strong)NSArray<Contentrelated> *related_albums;
 @property (nonatomic,strong)NSNumber *reply_count;
 @property (nonatomic,strong)ContentSender *sender;
@@ -48,6 +48,7 @@
 @property (nonatomic,strong)NSArray *tags;
 @property (nonatomic,strong)NSDictionary *top_comments;
 @property (nonatomic,strong)NSArray *top_like_users;
+
 @end
 
 @interface ContentPhoto : JSONModel
