@@ -15,7 +15,6 @@
 
 #import "UserProfileManager.h"
 #import "ChatDemoHelper.h"
-#import "SSApplicationInfo.h"
 
 static const CGFloat kDefaultPlaySoundInterval = 3.0;
 static NSString *kMessageType = @"MessageType";

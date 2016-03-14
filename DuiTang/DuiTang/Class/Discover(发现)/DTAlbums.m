@@ -10,10 +10,11 @@
 #import "UIKit+AFNetworking.h"
 #import "UIView+ViewController.h"
 #import "DTWaterFlowController.h"
+#import "DTDisCoverAlbum.h"
 
 @interface DTAlbums ()
 
-//@property (nonatomic,)
+@property (nonatomic,strong)Content *content;
 
 @end
 
@@ -21,6 +22,7 @@
 
 - (void)configureModel:(Content *)model
 {
+    self.content = model;
     //title
     UILabel *titleLabel = [[UILabel alloc]init];
     [self addSubview:titleLabel];
@@ -44,7 +46,9 @@
     for (int i=0; i<model.related_albums.count; i++) {
        
         Contentrelated *related = model.related_albums[i];
-        UIImageView *ablumView = [[UIImageView alloc]init];
+        DTDisCoverAlbum *ablumView = [[DTDisCoverAlbum alloc]init];
+        ablumView.userInteractionEnabled = YES;
+        ablumView.dId = related.Aid.stringValue;
         NSString *str =[related.covers firstObject];
       [ablumView setImageWithURL:[NSURL URLWithString:str]];
         [scView addSubview:ablumView];
@@ -54,7 +58,7 @@
         CGFloat y = 10;
         ablumView.frame = CGRectMake(x, y, w, w);
         
-        UIGestureRecognizer *g = [[UIGestureRecognizer alloc]initWithTarget:self action:@selector(touchImage:)];
+        UITapGestureRecognizer *g = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(touchImage:)];
         [ablumView addGestureRecognizer:g];
         
         UILabel *nameLabel = [[UILabel alloc]init];
@@ -79,11 +83,20 @@
     scView.contentSize = CGSizeMake(self.Width, 0);
 }
 
-- (void)touchImag:(Content *)model
+- (void)touchImage:(UITapGestureRecognizer *)g
 {
-    
+    NSLog(@"手势方法");
+    DTDisCoverAlbum *album = (DTDisCoverAlbum *)g.view;
+        //Aid
+        NSString *str1 = @"http://www.duitang.com/napi/blog/list/by_album/?platform_name=iPhone%20OS&start=0&__dtac=%257B%2522_r%2522%253A%2520%2522458242%2522%257D&__domain=www.duitang.com&include_fields=sender%2Cfavroite_count%2Calbum%2Cicon_url%2Creply_count%2Clike_count&app_version=6.0.1%20rv%3A153547&device_platform=iPhone6%2C2&user_id=4404986&app_code=gandalf&locale=zh_CN&platform_version=9.2.1&screen_height=568&device_name=Unknown%20iPhone&limit=0&sender_id=0&screen_width=320&";
+        NSString *str2 = [NSString stringWithFormat:@"album_id=%@",album.dId];
+        NSString *path = [NSString stringWithFormat:@"%@%@",str1,str2];
+
+    NSLog(@"手势方法%@",path);
     DTWaterFlowController *waterVC = [[DTWaterFlowController alloc]init];
+    waterVC.urlStr = path;
     [self.viewController.navigationController pushViewController:waterVC animated:YES];
+
 }
 
 @end
