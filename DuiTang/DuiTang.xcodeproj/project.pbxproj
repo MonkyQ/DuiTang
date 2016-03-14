@@ -407,6 +407,7 @@
 		D18EE5BA1C92DE5900ADCE52 /* DTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D18EE58E1C92DE5900ADCE52 /* DTHomeViewController.m */; };
 		D18EE5BB1C92DE5900ADCE52 /* DTHomeWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = D18EE5901C92DE5900ADCE52 /* DTHomeWebController.m */; };
 		D18EE5BC1C92DE5900ADCE52 /* DTWaterFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D18EE5921C92DE5900ADCE52 /* DTWaterFlowController.m */; };
+		D1A88BA91C93C86C0087F554 /* DTDisCoverAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A88BA81C93C86C0087F554 /* DTDisCoverAlbum.m */; };
 		D1BE3F381C90066D00F574DE /* DTContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BE3F371C90066D00F574DE /* DTContentViewController.m */; };
 		D1BE3F3B1C900B9C00F574DE /* DTContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BE3F3A1C900B9C00F574DE /* DTContentModel.m */; };
 		D1C5DBC51C8EAE4E0096B258 /* DTDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C5DBC41C8EAE4E0096B258 /* DTDetailsViewController.m */; };
@@ -1188,6 +1189,8 @@
 		D18EE5901C92DE5900ADCE52 /* DTHomeWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTHomeWebController.m; sourceTree = "<group>"; };
 		D18EE5911C92DE5900ADCE52 /* DTWaterFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTWaterFlowController.h; sourceTree = "<group>"; };
 		D18EE5921C92DE5900ADCE52 /* DTWaterFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTWaterFlowController.m; sourceTree = "<group>"; };
+		D1A88BA71C93C86C0087F554 /* DTDisCoverAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTDisCoverAlbum.h; sourceTree = "<group>"; };
+		D1A88BA81C93C86C0087F554 /* DTDisCoverAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTDisCoverAlbum.m; sourceTree = "<group>"; };
 		D1BE3F361C90066D00F574DE /* DTContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTContentViewController.h; sourceTree = "<group>"; };
 		D1BE3F371C90066D00F574DE /* DTContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTContentViewController.m; sourceTree = "<group>"; };
 		D1BE3F391C900B9C00F574DE /* DTContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTContentModel.h; sourceTree = "<group>"; };
@@ -2757,6 +2760,8 @@
 				D1D926451C9192D3003F1B80 /* DTContentView.m */,
 				D1D926471C925C4A003F1B80 /* DTAlbums.h */,
 				D1D926481C925C4A003F1B80 /* DTAlbums.m */,
+				D1A88BA71C93C86C0087F554 /* DTDisCoverAlbum.h */,
+				D1A88BA81C93C86C0087F554 /* DTDisCoverAlbum.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -3779,6 +3784,7 @@
 				D18EE5001C92D88E00ADCE52 /* SettingsViewController.m in Sources */,
 				D18EE44F1C92D88E00ADCE52 /* EaseConversationCell.m in Sources */,
 				D18EE3F81C92D88E00ADCE52 /* EMVoiceConverter.mm in Sources */,
+				D1A88BA91C93C86C0087F554 /* DTDisCoverAlbum.m in Sources */,
 				D18EE4381C92D88E00ADCE52 /* EaseUsersListViewController.m in Sources */,
 				D18EE5B21C92DE5900ADCE52 /* DTWaterFlowCell.m in Sources */,
 				D18EE5981C92DE5900ADCE52 /* DTComment.m in Sources */,
