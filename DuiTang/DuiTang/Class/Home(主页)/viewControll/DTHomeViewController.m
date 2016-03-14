@@ -112,12 +112,14 @@
             NSArray *arr = dataDict[@"object_list"];
             NSMutableArray * marr = [NSMutableArray array];
             for (NSDictionary * smallDict in arr) {
+                //判断数据类型
                 if ([smallDict[@"style"] isEqualToString:@"large"]) {
                     DTBigModel * model = [DTBigModel mj_objectWithKeyValues:smallDict];
                     
                     DTBigModelFrame *bFrame = [[DTBigModelFrame alloc]init];
                     bFrame.model = model;
-                    if ([model.dynamic_info isEqualToString:@"推广"]) {
+                    //修改type 因为返回json数据被修改了
+                    if ([model.content_type isEqualToString:@"other"]) {
                         [self.headArray addObject:bFrame];
                     }
                     
@@ -132,11 +134,11 @@
             }
             [self.headArray addObject:marr[0]];
            
-//             [self.headArray addObject:marr[2]];
+
             
             
             [marr removeObjectsInArray:self.headArray];
-//            [marr removeObject:marr[0]];
+
             DTHeadViewController *hVc = [self.childViewControllers firstObject];
             hVc.modelArray = self.headArray;
             

@@ -51,7 +51,7 @@
 #define titleFont [UIFont systemFontOfSize:15]
 #define otherFont [UIFont systemFontOfSize:13]
 #define maxLine 6
-#define HMNavigationTitleFont [UIFont boldSystemFontOfSize:20]
+#define HMNavigationTitleFont [UIFont boldSystemFontOfSize:16]
 
 #define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
 
