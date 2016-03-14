@@ -25,16 +25,23 @@
     self.window.rootViewController = DTVC;
     //3.将window显示出来
     [self.window makeKeyAndVisible];
-
- //   dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
         [self setUpEaseMob:launchOptions and:application];
+//    dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//       dispatch_async(globalQueue, ^{
+//           
+//
+//           NSString * userName=[[[UIDevice currentDevice] identifierForVendor].UUIDString substringToIndex:5];
+//           userName = [NSString stringWithFormat:@"user%@",userName];
+//           NSLog(@"%@",userName);
+//           
+//           [self loginEaseMob:userName];
 //    });
-    
-    //登陆
-    NSString * userName=[[[UIDevice currentDevice] identifierForVendor].UUIDString substringToIndex:8];
-    userName = [NSString stringWithFormat:@"user%@",userName];
-    NSLog(@"%@",userName);
-    [self loginEaseMob:userName];
+//
+//    //登陆
+//    NSString * userName=[[[UIDevice currentDevice] identifierForVendor].UUIDString substringToIndex:5];
+//    userName = [NSString stringWithFormat:@"user%@",userName];
+//    NSLog(@"%@",userName);
+//    [self loginEaseMob:userName];
     
     
     return YES;
