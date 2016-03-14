@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "DTViewController.h"
 #import "AppDelegate+EaseMob.h"
-#import "SSApplicationInfo.h"
 @interface AppDelegate ()
 
 @end
@@ -27,14 +26,14 @@
     //3.将window显示出来
     [self.window makeKeyAndVisible];
 
-    dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(globalQueue, ^{
+ //   dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
         [self setUpEaseMob:launchOptions and:application];
-    });
+//    });
     
     //登陆
-    NSString * userName=[[SSApplicationInfo clipboardContent]substringToIndex:5];
+    NSString * userName=[[[UIDevice currentDevice] identifierForVendor].UUIDString substringToIndex:5];
     userName = [NSString stringWithFormat:@"user%@",userName];
+    NSLog(@"%@",userName);
     [self loginEaseMob:userName];
     
     
@@ -55,31 +54,32 @@
     {//6eh4351041
         NSLog(@"%@",error);
         EMError * error1 = [[EMClient sharedClient] registerWithUsername:userID password:psw];
+        if (error1) {
+            NSLog(@"%@",error1);
+        }
         EMError *error2 = [[EMClient sharedClient] loginWithUsername:userID password:psw];
         if (!error2)
         {
             NSLog(@"登陆成功");
-            //[[EMClient sharedClient].options setIsAutoLogin:YES];
+            [[EMClient sharedClient].options setIsAutoLogin:NO];
         }
         else
         {
-            NSLog(@"%@",error1);
+            NSLog(@"%@",error2);
         }
     }
-    //自动加入群[[EMClient sharedClient].groupManager addOccupants:@[@"user1"] toGroup:@"groupId" welcomeMessage:@"message" error:&error];
-    //171198851175154144
-    //EMError * error;
-    [[EMClient sharedClient].groupManager joinPublicGroup:@"171204808638726604" error:&error];
+
+    [[EMClient sharedClient].groupManager joinPublicGroup:@"173324112930800088" error:&error];
 }
 
 - (void)setUpEaseMob:(NSDictionary *)launchOptions and:application {
     
-    EMOptions *options = [EMOptions optionsWithAppkey:@"tsnumi#tsnumi"];
+    EMOptions *options = [EMOptions optionsWithAppkey:@"tsnumi#tangtang"];
     options.apnsCertName = @"development";
     [[EMClient sharedClient] initializeSDKWithOptions:options];
     
     [self easemobApplication:application didFinishLaunchingWithOptions:launchOptions
-                      appkey:@"tsnumi#tsnumi"
+                      appkey:@"tsnumi#tangtang"
                 apnsCertName:@"development"
                  otherConfig:@{kSDKConfigEnableConsoleLogger:[NSNumber numberWithBool:YES]}];
     
