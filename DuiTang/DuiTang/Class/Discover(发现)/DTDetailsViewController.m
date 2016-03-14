@@ -62,6 +62,7 @@ static NSString *cellID = @"DTDetailCollectionViewCell";
     [self.collectionView.mj_header beginRefreshing];
     
     self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    self.collectionView.mj_footer.hidden = YES;
  
 }
 
@@ -89,6 +90,7 @@ static NSString *cellID = @"DTDetailCollectionViewCell";
             [self.collectionView reloadData];
             
             [self.collectionView.mj_header endRefreshing];
+            self.collectionView.mj_footer.hidden = NO;
         }else
         {
             NSLog(@"错误:%@",result);
