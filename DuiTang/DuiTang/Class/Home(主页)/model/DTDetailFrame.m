@@ -89,7 +89,7 @@
     if (maxH <= 50) {
         msgSize.height = 50;
     }
-    self.msgFrame = (CGRect){{homePedding,msgY},msgSize};
+    self.msgFrame = (CGRect){{homePedding,msgY},iconW,msgSize.height};
     
     
     
@@ -106,8 +106,7 @@
     //scrollView的
     
     
-    
-    self.specialScrollFrame = CGRectMake(0, 0, 0, 0);
+  
     CGFloat specialSX = specialX;
     CGFloat specialSY = CGRectGetMaxY(self.specialLabelFrame)+homePedding;
     CGFloat specialSW = iconW;

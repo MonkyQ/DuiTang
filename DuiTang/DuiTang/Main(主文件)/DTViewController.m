@@ -11,6 +11,7 @@
 #import "DTDiscoverViewController.h"
 #import "DTStoreViewController.h"
 #import "DTMineViewController.h"
+#import "HMNavigationController.h"
 
 #import "UserProfileManager.h"
 #import "ChatDemoHelper.h"
@@ -67,7 +68,7 @@ static NSString *kGroupName = @"GroupName";
     [childVC.tabBarItem setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
     [childVC.tabBarItem setTitleTextAttributes:selectTextAttrs forState:UIControlStateSelected];
     
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:childVC];
+    HMNavigationController *nav = [[HMNavigationController alloc]initWithRootViewController:childVC];
     [self addChildViewController:nav];
     
 }

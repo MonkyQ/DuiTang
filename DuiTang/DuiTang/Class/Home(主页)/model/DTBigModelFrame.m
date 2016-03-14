@@ -9,7 +9,7 @@
 #import "DTBigModelFrame.h"
 #define maxWidth 275
 
-
+#define marginLeft 2
 #define  screenW [UIScreen mainScreen].bounds.size.width;
 
 
@@ -33,7 +33,7 @@
     
     
     CGFloat oriX = 0;
-    CGFloat oriY = homePedding;
+    CGFloat oriY = marginLeft;
     CGFloat oriW = mainScreenWidth;
     CGFloat oriH = 0;
     
@@ -58,15 +58,10 @@
     CGSize contentSize = [self sizeWithFont:otherFont maxW:maxWidth str:model.stitle];
     self.contentFrame = (CGRect){{contentX,contentY},contentSize};
     
-    
-//    CGFloat readH = 40;
-//    CGFloat readX = titleX;
-//    CGFloat readY = CGRectGetMaxY(self.contentFrame)+2*homePedding;
-//    CGFloat readW = 100;
-//    self.dyInfoFrame = CGRectMake(readX, readY, readW, readH);
+    oriH = CGRectGetMaxY(self.iconFrame);
      self.originalFrame =CGRectMake(oriX, oriY, oriW, oriH);
     
-    self.maxHight = CGRectGetMaxY(self.iconFrame)+oriY;
+    self.maxHight = CGRectGetMaxY(self.originalFrame);
 }
 
 

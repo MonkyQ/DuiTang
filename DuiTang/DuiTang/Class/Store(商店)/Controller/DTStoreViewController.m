@@ -142,7 +142,7 @@
 #pragma UITableViewDelegate
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 90;
+    return 95;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -158,6 +158,7 @@
 {
     DTReadModel * mod=self.dataArray[indexPath.row];
     DTWebController * web=[DTWebController dtWebControllerWithID:mod.ID];
+    web.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:web animated:YES];
 }
 - (void)didReceiveMemoryWarning
