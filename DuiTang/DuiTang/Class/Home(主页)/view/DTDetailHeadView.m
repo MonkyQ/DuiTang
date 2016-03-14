@@ -17,6 +17,8 @@
 #import "DTDetailContentView.h"
 
 #import "UIImageView+webcache.h"
+@interface DTDetailHeadView ()<UIGestureRecognizerDelegate>
+@end
 
 #import "DTDetailFrame.h"
 @interface DTDetailHeadView ()
@@ -36,8 +38,10 @@
         UIImageView *imageView = [[UIImageView alloc]init];
         [self addSubview:imageView];
         imageView.userInteractionEnabled = YES;
+        
         //给imageview添加放大图片手势
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClick:)];
+        tap.delegate = self;
         [imageView addGestureRecognizer:tap];
         self.imageView = imageView;
         
@@ -84,6 +88,7 @@
         photo.srcImageView =(UIImageView *) tap.view;
     
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressClick:)];
+    longPress.delegate = self;
     [photo.srcImageView addGestureRecognizer:longPress];
         [photos addObject:photo];
   
@@ -140,5 +145,11 @@
     self.y = 0;
     self.height = CGRectGetMaxY(self.contentLabel.frame)+homePedding;
     self.width = mainScreenWidth;
+}
+
+
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
 }
 @end

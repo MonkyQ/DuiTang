@@ -33,7 +33,7 @@
 @property (nonatomic ,weak)UITableView *tableView;
 @property (nonatomic ,strong)NSMutableArray *dataArray;
 @property (nonatomic ,strong)NSMutableArray *headArray;
-
+@property (nonatomic ,assign)int startIndex;
 @end
 /**
  *  2
@@ -93,23 +93,23 @@
 }
 
 //加载更多数据，还没有完善接口
--(void)loadMoreData
-{
-   // NSLog(@"loadMoreData  loadMoreData");
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.tableView.mj_footer endRefreshing];
-    });
-}
+//-(void)loadMoreData
+//{
+//   // NSLog(@"loadMoreData  loadMoreData");
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self.tableView.mj_footer endRefreshing];
+//    });
+//}
 -(void)loadData
 {
-    [self.headArray removeAllObjects];
-    [self.dataArray removeAllObjects];
-    NSString * urlStr = homeStr;
-    [DTNetHelper getDataWithParam:nil andPath:urlStr andComplete:^(BOOL success, id result) {
+    
+
+    [DTNetHelper getDataWithParam:nil andPath:homeStr andComplete:^(BOOL success, id result) {
         
         if (success) {
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingMutableContainers error:nil];
             NSDictionary *dataDict = dict[@"data"];
+           
             NSArray *arr = dataDict[@"object_list"];
             NSMutableArray * marr = [NSMutableArray array];
             for (NSDictionary * smallDict in arr) {
@@ -143,10 +143,13 @@
             DTHeadViewController *hVc = [self.childViewControllers firstObject];
             hVc.modelArray = self.headArray;
             
-            
-            [self.dataArray addObjectsFromArray:marr];
+            //直接覆盖
+            self.dataArray = marr;
+            //[self.dataArray addObjectsFromArray:marr];
+           
             dispatch_async(dispatch_get_main_queue(), ^{
                 //[SVProgressHUD dismiss];
+                 self.startIndex = [dataDict[@"next_start"] intValue];
                 [self.tableView reloadData];
                 [self.tableView.mj_header endRefreshing];
             });
@@ -156,6 +159,59 @@
     }];
     
     
+}
+
+
+
+-(void)loadMoreData
+
+{
+    if (self.startIndex==0)
+    {
+        return;
+    }
+   NSString *str1 = @"http://www.duitang.com/napi/ad/banner/list/?screen_width=1080&app_version=70&";
+    NSString *str2 = @"&query_type=normal&locale=zh&ad_id=ANA009&screen_height=1920&platform_version=5.0.2&limit=0&platform_name=Android&device_platform=Redmi%2BNote%2B2&app_code=nayutas";
+    NSLog(@"=================================================%d",self.startIndex);
+    NSString * urlStr = [NSString stringWithFormat:@"%@start=%d%@",str1,self.startIndex,str2];
+    [DTNetHelper getDataWithParam:nil andPath:urlStr andComplete:^(BOOL success, id result) {
+        
+        if (success) {
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingMutableContainers error:nil];
+            NSDictionary *dataDict = dict[@"data"];
+             self.startIndex = [dataDict[@"next_start"] intValue];
+            NSArray *arr = dataDict[@"object_list"];
+            
+            NSMutableArray * marr = [NSMutableArray array];
+            for (NSDictionary * smallDict in arr) {
+                //判断数据类型
+                if ([smallDict[@"style"] isEqualToString:@"large"]) {
+                    DTBigModel * model = [DTBigModel mj_objectWithKeyValues:smallDict];
+                    
+                    DTBigModelFrame *bFrame = [[DTBigModelFrame alloc]init];
+                    bFrame.model = model;
+                  
+                   
+                    
+                    [marr addObject:bFrame];
+                }else
+                {
+                    DTHomeModel *hmodel = [DTHomeModel mj_objectWithKeyValues:smallDict];
+                    DTModelFrame *sFrame = [[DTModelFrame alloc]init];
+                    sFrame.model = hmodel;
+                    [marr addObject:sFrame];
+                }
+            }
+            [self.dataArray addObjectsFromArray:marr];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+                [self.tableView.mj_footer endRefreshing];
+            });
+        }else {
+            NSLog(@"%@",result);
+            [self.tableView.mj_footer endRefreshing];
+        }
+    }];
 }
 
 /**

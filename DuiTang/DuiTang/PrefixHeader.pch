@@ -83,7 +83,7 @@ static NSString *bigStr2 = @"&include_fields=share_links&locale=zh&app_code=nayu
 
 
 //小的cell
-#define homeStr @"http://www.duitang.com/napi/ad/banner/list/?screen_width=1080&app_version=70&start=0&query_type=normal&locale=zh&ad_id=ANA009&screen_height=1920&platform_version=5.0.2&limit=0&platform_name=Android&device_platform=Redmi%2BNote%2B2&app_code=nayutas";
+#define homeStr @"http://www.duitang.com/napi/ad/banner/list/?screen_width=1080&app_version=70&start=0&query_type=normal&locale=zh&ad_id=ANA009&screen_height=1920&platform_version=5.0.2&limit=0&platform_name=Android&device_platform=Redmi%2BNote%2B2&app_code=nayutas"
 //#define waterFlowStr @"http://203.80.144.213/napi/blog/list/by_album/?screen_width=1080&app_version=70&start=0&locale=zh&screen_height=1920&platform_version=5.0.2&__dtac=%257B%257D&__domain=www.duitang.com&platform_name=Android&device_platform=Redmi%2BNote%2B2&album_id=//%@//&include_fields=sender%2Calbum%2Cicon_url%2Creply_count%2Clike_count%2Ctop_comments%2Ctop_like_users&app_code=nayutas"
 
 static NSString *str1 = @"http://203.80.144.213/napi/blog/list/by_album/?screen_width=1080&app_version=70&start=0&locale=zh&screen_height=1920&platform_version=5.0.2&__dtac=%257B%257D&__domain=www.duitang.com&platform_name=Android&device_platform=Redmi%2BNote%2B2&album_";
