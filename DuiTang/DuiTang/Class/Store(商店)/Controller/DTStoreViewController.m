@@ -11,6 +11,7 @@
 #import "DTReadCell.h"
 #import "DTReadModel.h"
 #import "DTWebController.h"
+#import <SVProgressHUD.h>
 #import "CCEaseRefresh.h"
 #import <MJRefresh.h>
 @interface DTStoreViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -23,6 +24,7 @@
 //下拉刷新最后一个
 @property (nonatomic,assign)NSInteger start;
 //上啦刷新
+
 @end
 
 @implementation DTStoreViewController
@@ -42,7 +44,8 @@
     self.tableView.mj_header=[MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self downLoadData];
     }];
-    
+    [SVProgressHUD show];
+
     self.tableView.mj_footer=[MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [self downloadAppendData];
     }];
@@ -73,7 +76,7 @@
  */
 -(void)downLoadData
 {
-
+    //
     [DTNetHelper getDataWithParam:nil andPath:@"http://203.80.144.212/napi/topic/article/list/?platform_name=iPhone%20OS&start=0&__domain=www.duitang.com&app_version=6.0.1%20rv%3A153547&device_platform=iPhone6%2C2&app_code=gandalf&locale=zh_CN&platform_version=9.2.1&screen_height=568&type=by_banner&device_name=Unknown%20iPhone&limit=0&screen_width=320&__dtac=%257B%2522_r%2522%253A%2520%2522742678%2522%257D" andComplete:^(BOOL success, id result) {
         if (success)
         {
@@ -93,7 +96,7 @@
         {
             NSLog(@"请求失败");
         }
-        
+        [SVProgressHUD dismiss];
         //请求结束，结束控件
         [self.tableView.mj_header endRefreshing];
     }];
@@ -126,7 +129,7 @@
                 NSMutableArray * array=[NSMutableArray arrayWithArray:self.dataArray];
                 [array addObjectsFromArray:root.data.object_list];
                 self.dataArray=array;
-                self.start=self.dataArray.count;
+                
                 [self.tableView reloadData];
             }
             else
@@ -135,7 +138,14 @@
             }
             
             //请求结束，结束控件
+        if (self.start==self.dataArray.count) {
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        }
+        else
+        {
             [self.tableView.mj_footer endRefreshing];
+            self.start=self.dataArray.count;
+        }
         }];
     
 }

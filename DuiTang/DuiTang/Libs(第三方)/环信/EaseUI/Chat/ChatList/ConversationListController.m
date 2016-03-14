@@ -118,9 +118,9 @@
             NSLog(@"%@",error2);
         }
     }
-    //171198851175154144
+    //173324112930800088
     //EMError * error;
-    [[EMClient sharedClient].groupManager joinPublicGroup:@"171204808638726604" error:&error];
+    [[EMClient sharedClient].groupManager joinPublicGroup:@"173324112930800088" error:&error];
 }
 
 -(void)rightAction

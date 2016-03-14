@@ -37,7 +37,6 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
     //groupId  description  occupantsCount
     TSAllGroupListCell * cell = [TSAllGroupListCell cellWithTableView:tableView];
     EMGroup * group=self.dataArray[indexPath.row];

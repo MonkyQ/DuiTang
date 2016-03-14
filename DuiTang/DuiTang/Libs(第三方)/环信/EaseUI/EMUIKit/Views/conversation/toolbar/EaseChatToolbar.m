@@ -538,11 +538,11 @@
     if ([text isEqualToString:@"\n"]) {
         if ([self.delegate respondsToSelector:@selector(didSendText:)])
         {
-            NSString * accountName=[[NSUserDefaults standardUserDefaults]objectForKey:TSName];
-            NSDictionary *ext = @{@"accountName":accountName};
-            [self.delegate didSendText:textView.text withExt:ext];
+//            NSString * accountName=[[NSUserDefaults standardUserDefaults]objectForKey:TSName];
+//            NSDictionary *ext = @{@"accountName":@"ddddddd"};
+//            [self.delegate didSendText:textView.text withExt:ext];
             
-            //[self.delegate didSendText:textView.text];
+            [self.delegate didSendText:textView.text];
             self.inputTextView.text = @"";
             [self _willShowInputTextViewToHeight:[self _getTextViewContentH:self.inputTextView]];;
         }
