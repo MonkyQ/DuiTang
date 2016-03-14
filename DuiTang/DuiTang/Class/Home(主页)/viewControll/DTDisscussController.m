@@ -124,7 +124,10 @@
 {
     UITableView *tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
     tableView.y = 64;
-    tableView.size = self.view.size;
+ //   CGSize tmpSize = self.view.size;
+    tableView.height = self.view.size.height-64;
+    tableView.width = self.view.size.width;
+    
     [self.view addSubview:tableView];
     
     //    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {

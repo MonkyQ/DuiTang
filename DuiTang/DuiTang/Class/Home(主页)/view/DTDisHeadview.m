@@ -13,6 +13,10 @@
 #import "DTDiscuss.h"
 #import "DTSender.h"
 
+//图片游览器
+#import "MJPhotoBrowser.h"
+#import "MJPhoto.h"
+
 #import "UIImageView+webcache.h"
 
 @interface DTDisHeadview ()
@@ -44,6 +48,11 @@
         self.contentLabel = contentLabel;
         
         UIImageView *iconImage = [[UIImageView alloc]init];
+        //添加手势
+        iconImage.userInteractionEnabled = YES;
+        UITapGestureRecognizer *g = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
+        [iconImage addGestureRecognizer:g];
+        
         [self addSubview:iconImage];
         self.iconImage = iconImage;
         
@@ -111,7 +120,6 @@
     NSLog(@"%@",countStr);
     self.seeCountLabel.frame = discussF.seeCountLabelFrame;
     self.seeCountLabel.text = countStr;
-    
     self.height = discussF.maxHight;
     
 }
@@ -122,4 +130,39 @@
     frame.size.width-=(2*homePedding);
     [super setFrame:frame];
 }
+
+- (void)tap:(UITapGestureRecognizer *)tap
+{
+    // 1.创建图片浏览器
+    MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
+    
+    // 2.设置图片浏览器显示的所有图片
+    NSMutableArray *photos = [NSMutableArray array];
+    
+    MJPhoto *photo = [[MJPhoto alloc] init];
+    
+    
+    // 设置图片的路径
+    DTPhoto *pho = [self.discussF.discuss.photos firstObject] ;
+    NSString *str = [pho.path stringByReplacingOccurrencesOfString:@"_webp" withString:@""];
+    photo.url = [NSURL URLWithString:str];
+    // 设置来源于哪一个UIImageView
+    photo.srcImageView =(UIImageView *) tap.view;
+    
+    [photos addObject:photo];
+    
+    browser.photos = photos;
+    
+    // 3.设置默认显示的图片索引
+    browser.currentPhotoIndex = 0;
+    
+    // 3.显示浏览器
+    
+    [browser show];
+    UIImage *image=photo.capture;
+    NSLog(@"%@=================",image);
+    
+    
+}
+
 @end
